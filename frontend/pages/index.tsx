@@ -4,6 +4,13 @@ import { HomePageType, TransitionsType } from "../shared/types/types";
 import { motion } from "framer-motion";
 import client from "../client";
 import { homePageQueryString } from "../lib/sanityQueries";
+import HomeGallery from "../components/blocks/HomeGallery";
+import HomeHero from "../components/blocks/HomeHero";
+import HomePortfolio from "../components/blocks/HomePortfolio";
+import MultiTypeTitle from "../components/blocks/MultiTypeTitle";
+import PartnersCarousel from "../components/blocks/PartnersCarousel";
+import ServicesList from "../components/blocks/ServicesList";
+import TalentCarousel from "../components/blocks/TalentCarousel";
 
 const PageWrapper = styled(motion.div)``;
 
@@ -28,7 +35,13 @@ const Page = (props: Props) => {
         title={data?.seoTitle || ""}
         description={data?.seoDescription || ""}
       />
-      Home
+      <HomeHero />
+      <HomePortfolio />
+      <PartnersCarousel />
+      <TalentCarousel />
+      <MultiTypeTitle />
+      <ServicesList />
+      <HomeGallery />
     </PageWrapper>
   );
 };

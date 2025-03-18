@@ -4,6 +4,10 @@ import { AboutPageType, TransitionsType } from "../shared/types/types";
 import { motion } from "framer-motion";
 import client from "../client";
 import { aboutPageQueryString } from "../lib/sanityQueries";
+import AboutHero from "../components/blocks/AboutHero";
+import OurPeopleList from "../components/blocks/OurPeopleList";
+import OurPeopleTitle from "../components/blocks/OurPeopleTitle";
+import ServicesList from "../components/blocks/ServicesList";
 
 const PageWrapper = styled(motion.div)``;
 
@@ -28,7 +32,10 @@ const Page = (props: Props) => {
         title={data?.seoTitle || ""}
         description={data?.seoDescription || ""}
       />
-      About
+      <AboutHero />
+      <ServicesList />
+      <OurPeopleTitle />
+      <OurPeopleList />
     </PageWrapper>
   );
 };
