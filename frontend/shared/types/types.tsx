@@ -26,7 +26,17 @@ export type SlugType = {
   current: string;
 };
 
-export type SiteSettingsType = {};
+export type SiteSettingsType = {
+  referenceTitle: string;
+  instagramUrl: string;
+  tiktokUrl: string;
+  facebookUrl: string;
+  phone: string;
+  email: string;
+  officeAddress: string;
+  officeGoogleMapsLink: string;
+  termsAndConditions: any[];
+};
 
 export type TalentType = {
   name: string;
