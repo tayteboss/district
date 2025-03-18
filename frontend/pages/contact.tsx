@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
-import { HomePageType, TransitionsType } from "../shared/types/types";
+import { ContactPageType, TransitionsType } from "../shared/types/types";
 import { motion } from "framer-motion";
 import client from "../client";
-import { homePageQueryString } from "../lib/sanityQueries";
+import { contactPageQueryString } from "../lib/sanityQueries";
 
 const PageWrapper = styled(motion.div)``;
 
 type Props = {
-  data: HomePageType;
+  data: ContactPageType;
   pageTransitionVariants: TransitionsType;
 };
 
@@ -28,13 +28,13 @@ const Page = (props: Props) => {
         title={data?.seoTitle || ""}
         description={data?.seoDescription || ""}
       />
-      Home
+      Contact
     </PageWrapper>
   );
 };
 
 export async function getStaticProps() {
-  const data = await client.fetch(homePageQueryString);
+  const data = await client.fetch(contactPageQueryString);
 
   return {
     props: {

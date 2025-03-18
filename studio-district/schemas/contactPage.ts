@@ -10,6 +10,16 @@ export default {
       description: 'This is an internal reference title.',
     },
     {
+      title: 'SEO title',
+      name: 'seoTitle',
+      type: 'string',
+    },
+    {
+      title: 'SEO Description',
+      name: 'seoDescription',
+      type: 'string',
+    },
+    {
       title: 'For brands button title',
       name: 'forBrandsButtonTitle',
       type: 'string',

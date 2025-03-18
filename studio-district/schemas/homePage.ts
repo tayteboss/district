@@ -12,6 +12,16 @@ export default {
       description: 'This is an internal reference title.',
     },
     {
+      title: 'SEO title',
+      name: 'seoTitle',
+      type: 'string',
+    },
+    {
+      title: 'SEO Description',
+      name: 'seoDescription',
+      type: 'string',
+    },
+    {
       title: 'Hero title',
       name: 'heroTitle',
       type: 'array',
@@ -63,7 +73,19 @@ export default {
         },
       ],
     },
-    // Section here to reference talent as array
+    {
+      title: 'Featured talent',
+      name: 'featuredTalent',
+      type: 'array',
+      of: [
+        {
+          title: 'Talent',
+          name: 'talent',
+          type: 'reference',
+          to: [{type: 'talent'}],
+        },
+      ],
+    },
     {
       title: 'About title',
       name: 'aboutTitle',

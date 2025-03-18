@@ -15,20 +15,6 @@ export const mediaString = `
 			playbackId,
 		},
 	},
-	mobileImage {
-		asset-> {
-			url,
-			metadata {
-				lqip
-			}
-		},
-		alt
-	},
-	mobileVideo {
-		asset-> {
-			playbackId,
-		},
-	},
 `;
 
 export const siteSettingsQueryString = `
@@ -40,6 +26,98 @@ export const siteSettingsQueryString = `
 export const homePageQueryString = `
 	*[_type == 'homePage'][0] {
 		...,
+		heroTitle[]{
+			...
+		},
+		heroMedia {
+			media {
+				${mediaString}
+			}
+		},
+		portfolioTitle[]{
+			...
+		},
+		partnersTitle,
+		partnersLogos[]{
+			logo {
+				asset-> {
+					url
+				}
+			},
+			title,
+			logoLink
+		},
+		featuredTalent[]-> {
+			...,
+			title,
+			heroThumbnail {
+				asset-> {
+					url
+				}
+			}
+		},
+		aboutTitle[]{
+			...
+		},
+		servicesList[]{
+			title,
+			listItems[]
+		},
+		gallery[]{
+			image{
+				asset->{
+					url
+				}
+			},
+			aspectRatio
+		},
+	}
+`;
+
+export const aboutPageQueryString = `
+	*[_type == 'aboutPage'][0] {
+		...,
+		founderImage {
+			asset-> {
+				url
+			}
+		},
+		heroSubTitle,
+		heroTitle[]{
+			...
+		},
+		heroDescription,
+		servicesList[]{
+			title,
+			listItems[]
+		},
+		ourPeopleTitle[]{
+			...
+		},
+		people[]{
+			name,
+			position,
+			image {
+				asset-> {
+					url
+				}
+			}
+		},
+	}
+`;
+
+export const contactPageQueryString = `
+	*[_type == 'contactPage'][0] {
+		...,
+	}
+`;
+
+export const portfolioPageQueryString = `
+	*[_type == 'portfolioPage'][0] {
+		...,
+		heroTitle[]{
+			...
+		},
 	}
 `;
 

@@ -6,7 +6,12 @@ export const GlobalStyles = createGlobalStyle`
 	:root {
 		--colour-white: ${theme.colours.white};
 		--colour-black: ${theme.colours.black};
-		--font-default: ${theme.fonts.default};
+		--colour-off-white: ${theme.colours.offWhite};
+		--colour-matcha: ${theme.colours.matcha};
+		--colour-grey: ${theme.colours.grey};
+		--colour-orange: ${theme.colours.orange};
+		--font-times: ${theme.fonts.times};
+		--font-suisse: ${theme.fonts.suisse};
 		--transition-speed-default: ${theme.transitionSpeed.default};
 		--transition-speed-fast: ${theme.transitionSpeed.fast};
 		--transition-speed-extra-fast: ${theme.transitionSpeed.extraFast};
@@ -37,7 +42,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	html {
-		background: var(--colour-white);
+		background: var(--colour-off-white);
 		font-size: 16px;
 
 		&.no-scroll {
@@ -59,7 +64,7 @@ export const GlobalStyles = createGlobalStyle`
 	button,
 	label,
 	body {
-		font-family: var(--font-default);
+		font-family: var(--font-times);
 		color: var(--colour-black);
 		line-height: normal;
 	}
@@ -84,65 +89,49 @@ export const GlobalStyles = createGlobalStyle`
 
 	h1,
 	.type-h1 {
-		font-size: ${pxToRem(48)};
-		line-height: ${pxToRem(48)};
+		font-size: ${pxToRem(64)};
+		line-height: 1.1;
+		font-family: var(--font-suisse);
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
-			font-size: ${pxToRem(38)};
-			line-height: ${pxToRem(38)};
-		}
-
-		@media ${theme.mediaBreakpoints.mobile} {
 			font-size: ${pxToRem(28)};
-			line-height: ${pxToRem(28)};
+			line-height: 1.2;
 		}
 	}
 
 	h2,
 	.type-h2 {
-		font-size: ${pxToRem(48)};
-		line-height: ${pxToRem(48)};
+		font-size: ${pxToRem(64)};
+		line-height: 1.1;
+		font-family: var(--font-times);
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
-			font-size: ${pxToRem(38)};
-			line-height: ${pxToRem(38)};
-		}
-
-		@media ${theme.mediaBreakpoints.mobile} {
-			font-size: ${pxToRem(28)};
-			line-height: ${pxToRem(28)};
+			font-size: ${pxToRem(30)};
+			line-height: 1.2;
 		}
 	}
 
 	h3,
 	.type-h3 {
-		font-size: ${pxToRem(48)};
-		line-height: ${pxToRem(28)};
+		font-size: ${pxToRem(50)};
+		line-height: 1.1;
+		font-family: var(--font-suisse);
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
-			font-size: ${pxToRem(38)};
-			line-height: ${pxToRem(38)};
-		}
-
-		@media ${theme.mediaBreakpoints.mobile} {
-			font-size: ${pxToRem(28)};
-			line-height: ${pxToRem(28)};
+			font-size: ${pxToRem(26)};
+			line-height: 1.2;
 		}
 	}
 
 	h4,
 	.type-h4 {
-		font-size: ${pxToRem(48)};
-		line-height: ${pxToRem(28)};
+		font-size: ${pxToRem(40)};
+		line-height: 1.1;
+		font-family: var(--font-suisse);
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
-			font-size: ${pxToRem(38)};
-			line-height: ${pxToRem(38)};
-		}
-
-		@media ${theme.mediaBreakpoints.mobile} {
-			font-size: ${pxToRem(28)};
-			line-height: ${pxToRem(28)};
+			font-size: ${pxToRem(24)};
+			line-height: 1.2;
 		}
 	}
 
@@ -150,9 +139,65 @@ export const GlobalStyles = createGlobalStyle`
 	.type-p,
 	a,
 	button,
-	div {
+	div,
+	.type-b1 {
+		font-size: ${pxToRem(24)};
+		line-height: 1.3;
+		font-family: var(--font-times);
+
+		@media ${theme.mediaBreakpoints.tabletPortrait} {
+			font-size: ${pxToRem(18)};
+			line-height: 1.2;
+		}
+	}
+
+	.type-b2 {
 		font-size: ${pxToRem(16)};
-		line-height: ${pxToRem(16)};
+		line-height: 1.2;
+		font-family: var(--font-times);
+
+		@media ${theme.mediaBreakpoints.tabletPortrait} {
+			font-size: ${pxToRem(14)};
+			line-height: 1.2;
+		}
+	}
+
+	.type-button {
+		font-size: ${pxToRem(14)};
+		line-height: 1.2;
+		font-family: var(--font-suisse);
+
+		@media ${theme.mediaBreakpoints.tabletPortrait} {
+			font-size: ${pxToRem(12)};
+			line-height: 1.2;
+		}
+	}
+
+	.type-caption {
+		font-size: ${pxToRem(12)};
+		line-height: 1.1;
+		font-family: var(--font-suisse);
+
+		@media ${theme.mediaBreakpoints.tabletPortrait} {
+			font-size: ${pxToRem(9)};
+			line-height: 1.2;
+		}
+	}
+
+	.type-super {
+		font-size: ${pxToRem(128)};
+		line-height: 1.1;
+		font-family: var(--font-suisse);
+
+		@media ${theme.mediaBreakpoints.tabletPortrait} {
+			font-size: ${pxToRem(72)};
+			line-height: 1.2;
+		}
+
+		@media ${theme.mediaBreakpoints.mobile} {
+			font-size: ${pxToRem(48)};
+			line-height: 1.2;
+		}
 	}
 
 	mux-player {
