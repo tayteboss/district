@@ -11,6 +11,10 @@ import {
   portfolioPageQueryString,
   talentQueryString,
 } from "../lib/sanityQueries";
+import LoadMore from "../components/blocks/LoadMore";
+import PortfolioHero from "../components/blocks/PortfolioHero";
+import TalentFilters from "../components/blocks/TalentFilters";
+import TalentList from "../components/blocks/TalentList";
 
 const PageWrapper = styled(motion.div)``;
 
@@ -37,7 +41,10 @@ const Page = (props: Props) => {
         title={data?.seoTitle || ""}
         description={data?.seoDescription || ""}
       />
-      Portfolio
+      <PortfolioHero />
+      <TalentFilters />
+      <TalentList />
+      <LoadMore />
     </PageWrapper>
   );
 };
