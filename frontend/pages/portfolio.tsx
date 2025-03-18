@@ -16,7 +16,9 @@ import PortfolioHero from "../components/blocks/PortfolioHero";
 import TalentFilters from "../components/blocks/TalentFilters";
 import TalentList from "../components/blocks/TalentList";
 
-const PageWrapper = styled(motion.div)``;
+const PageWrapper = styled(motion.div)`
+  padding-top: var(--header-h);
+`;
 
 type Props = {
   data: PortfolioPageType;

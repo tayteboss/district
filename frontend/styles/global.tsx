@@ -79,7 +79,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	a {
-		text-decoration: underline;
+		text-decoration: none;
 		color: var(--colour-black);
 	}
 
@@ -166,6 +166,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: ${pxToRem(14)};
 		line-height: 1.2;
 		font-family: var(--font-suisse);
+		text-transform: uppercase;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
 			font-size: ${pxToRem(12)};

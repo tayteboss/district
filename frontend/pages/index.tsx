@@ -12,7 +12,9 @@ import PartnersCarousel from "../components/blocks/PartnersCarousel";
 import ServicesList from "../components/blocks/ServicesList";
 import TalentCarousel from "../components/blocks/TalentCarousel";
 
-const PageWrapper = styled(motion.div)``;
+const PageWrapper = styled(motion.div)`
+  padding-top: var(--header-h);
+`;
 
 type Props = {
   data: HomePageType;

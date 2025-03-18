@@ -9,7 +9,9 @@ import OurPeopleList from "../components/blocks/OurPeopleList";
 import OurPeopleTitle from "../components/blocks/OurPeopleTitle";
 import ServicesList from "../components/blocks/ServicesList";
 
-const PageWrapper = styled(motion.div)``;
+const PageWrapper = styled(motion.div)`
+  padding-top: var(--header-h);
+`;
 
 type Props = {
   data: AboutPageType;

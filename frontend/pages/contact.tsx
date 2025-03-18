@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 import client from "../client";
 import { contactPageQueryString } from "../lib/sanityQueries";
 
-const PageWrapper = styled(motion.div)``;
+const PageWrapper = styled(motion.div)`
+  padding-top: var(--header-h);
+`;
 
 type Props = {
   data: ContactPageType;
