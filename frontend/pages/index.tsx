@@ -37,11 +37,11 @@ const Page = (props: Props) => {
         title={data?.seoTitle || ""}
         description={data?.seoDescription || ""}
       />
-      <HomeHero />
+      <HomeHero heroMedia={data?.heroMedia} heroTitle={data?.heroTitle} />
       <HomePortfolio />
       <PartnersCarousel />
       <TalentCarousel />
-      <MultiTypeTitle />
+      {/* <MultiTypeTitle /> */}
       <ServicesList />
       <HomeGallery />
     </PageWrapper>

@@ -157,19 +157,21 @@ export type MultiTypeBlockType = {
 };
 
 export type MediaType = {
-  mediaType: "image" | "video";
-  image: {
-    asset: {
-      url: string;
-      metadata: {
-        lqip: string;
+  media: {
+    mediaType: "image" | "video";
+    image: {
+      asset: {
+        url: string;
+        metadata: {
+          lqip: string;
+        };
       };
+      alt: string;
     };
-    alt: string;
-  };
-  video: {
-    asset: {
-      playbackId: string;
+    video: {
+      asset: {
+        playbackId: string;
+      };
     };
   };
 };
