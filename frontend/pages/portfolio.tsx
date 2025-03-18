@@ -1,21 +1,30 @@
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
-import { PortfolioPageType, TransitionsType } from "../shared/types/types";
+import {
+  PortfolioPageType,
+  TalentType,
+  TransitionsType,
+} from "../shared/types/types";
 import { motion } from "framer-motion";
 import client from "../client";
-import { portfolioPageQueryString } from "../lib/sanityQueries";
+import {
+  portfolioPageQueryString,
+  talentQueryString,
+} from "../lib/sanityQueries";
 
 const PageWrapper = styled(motion.div)``;
 
 type Props = {
   data: PortfolioPageType;
+  talent: TalentType;
   pageTransitionVariants: TransitionsType;
 };
 
 const Page = (props: Props) => {
-  const { data, pageTransitionVariants } = props;
+  const { data, talent, pageTransitionVariants } = props;
 
   console.log("data", data);
+  console.log("talent", talent);
 
   return (
     <PageWrapper
@@ -35,10 +44,12 @@ const Page = (props: Props) => {
 
 export async function getStaticProps() {
   const data = await client.fetch(portfolioPageQueryString);
+  const talent = await client.fetch(talentQueryString);
 
   return {
     props: {
       data,
+      talent,
     },
   };
 }

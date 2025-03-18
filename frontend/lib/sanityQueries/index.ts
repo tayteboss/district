@@ -129,8 +129,29 @@ export const workPageQueryString = `
 	}
 `;
 
-export const projectsQueryString = `
-	*[_type == 'project'] | order(orderRank) [0...100] {
+export const talentQueryString = `
+	*[_type == 'talent'] | order(orderRank) [0...100] {
 		...,
+		title,
+		slug,
+		tags[],
+		description,
+		socialLinks[]{
+			title,
+			link
+		},
+		heroThumbnail{
+			asset->{
+				url
+			}
+		},
+		heroGallery[]{
+			title,
+			image{
+				asset->{
+					url
+				}
+			}
+		}
 	}
 `;
