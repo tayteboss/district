@@ -139,16 +139,14 @@ export type GalleryItemType = {
 };
 
 export type PartnerLogoType = {
-  partnerLogo: {
-    image: {
-      asset: {
-        url: string;
-      };
-      alt: string;
+  logo: {
+    asset: {
+      url: string;
     };
-    title: string;
-    logoLink?: string;
+    alt: string;
   };
+  title: string;
+  logoLink?: string;
 };
 
 export type MultiTypeBlockType = {

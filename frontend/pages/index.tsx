@@ -39,7 +39,10 @@ const Page = (props: Props) => {
       />
       <HomeHero heroMedia={data?.heroMedia} heroTitle={data?.heroTitle} />
       <HomePortfolio portfolioTitle={data?.portfolioTitle} />
-      <PartnersCarousel />
+      <PartnersCarousel
+        data={data?.partnersLogos}
+        title={data?.partnersTitle}
+      />
       <TalentCarousel />
       {/* <MultiTypeTitle /> */}
       <ServicesList />

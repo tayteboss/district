@@ -178,6 +178,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: ${pxToRem(12)};
 		line-height: 1.1;
 		font-family: var(--font-suisse);
+		font-weight: 400;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
 			font-size: ${pxToRem(9)};
