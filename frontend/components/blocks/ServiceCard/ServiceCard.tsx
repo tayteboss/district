@@ -81,14 +81,14 @@ const childVariants = {
   hidden: {
     opacity: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.5,
       ease: "easeInOut",
     },
   },
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.3,
+      duration: 0.5,
       ease: "easeInOut",
     },
   },
@@ -110,7 +110,6 @@ const ServiceCard = (props: Props) => {
 
   const outerVariants = {
     hidden: {
-      width: 0,
       opacity: 0,
       transition: {
         duration: 1,
@@ -118,15 +117,13 @@ const ServiceCard = (props: Props) => {
       },
     },
     visible: {
-      width: "100%",
       opacity: 1,
       transition: {
-        duration: 1.5,
+        duration: 0.5,
         ease: "easeInOut",
         when: "beforeChildren",
         staggerChildren: 0.1,
-        delayChildren: index * 0.2,
-        delay: index * 0.2,
+        delay: index * 0.1,
       },
     },
   };

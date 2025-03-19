@@ -127,10 +127,16 @@ export default {
       title: 'Gallery',
       name: 'gallery',
       type: 'array',
+      description: '3 images will be randomly selected from this bank.',
       of: [
         {
           type: 'object',
           fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string',
+            },
             {
               title: 'Image',
               name: 'image',
@@ -152,6 +158,7 @@ export default {
           ],
         },
       ],
+      validation: (Rule) => Rule.min(3).error('You must have at least 3 images'),
     },
   ],
 }

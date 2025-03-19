@@ -3,7 +3,11 @@ import { ServiceType } from "../../../shared/types/types";
 import ServiceCard from "../ServiceCard";
 import { useInView } from "react-intersection-observer";
 
-const ServicesListWrapper = styled.section``;
+const ServicesListWrapper = styled.section`
+  position: relative;
+  z-index: 2;
+  background: var(--colour-off-white);
+`;
 
 type Props = {
   data: ServiceType[];

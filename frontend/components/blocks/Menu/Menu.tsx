@@ -15,6 +15,7 @@ const MenuWrapper = styled(motion.div)`
     width: 100%;
     z-index: 90;
     background: var(--colour-off-white);
+    border-bottom: 1px solid var(--colour-black);
   }
 `;
 

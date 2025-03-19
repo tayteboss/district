@@ -10,6 +10,9 @@ import { useRef } from "react";
 
 const HomeHeroWrapper = styled.section`
   margin-bottom: ${pxToRem(16)};
+  position: relative;
+  z-index: 2;
+  background: var(--colour-off-white);
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     margin-bottom: 0;
@@ -34,11 +37,14 @@ const LogoWrapper = styled(motion.div)`
 const MediaWrapper = styled(motion.div)`
   position: relative;
   z-index: 2;
+  overflow: hidden;
 
   .media-wrapper {
     padding-top: 56.25%;
   }
 `;
+
+const TransformWrapper = styled(motion.div)``;
 
 type Props = {
   heroMedia: HomePageType["heroMedia"];
@@ -64,6 +70,12 @@ const HomeHero = (props: Props) => {
     ["scale(1) translateY(0px)", "scale(0.7) translateY(-100px)"]
   );
 
+  const transformImage = useTransform(
+    scrollY,
+    [0, 3500],
+    ["scale(1.5)", "scale(1)"]
+  );
+
   return (
     <HomeHeroWrapper ref={ref}>
       <LayoutWrapper>
@@ -73,7 +85,9 @@ const HomeHero = (props: Props) => {
         </LogoWrapper>
       </LayoutWrapper>
       <MediaWrapper style={{ transform: transformMedia }}>
-        <MediaStack data={heroMedia} />
+        <TransformWrapper style={{ transform: transformImage }}>
+          <MediaStack data={heroMedia} />
+        </TransformWrapper>
       </MediaWrapper>
     </HomeHeroWrapper>
   );

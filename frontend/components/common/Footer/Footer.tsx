@@ -8,12 +8,22 @@ import LayoutWrapper from "../../layout/LayoutWrapper";
 
 const FooterWrapper = styled.footer`
   background: var(--colour-matcha);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 `;
 
 const Inner = styled.div`
   text-align: center;
   padding: ${pxToRem(120)} 0 ${pxToRem(16)};
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
+
+const BottomWrapper = styled.div``;
 
 const LogoWrapper = styled.div`
   width: 100%;
@@ -39,15 +49,17 @@ const Footer = (props: Props) => {
       <LayoutWrapper>
         <Inner>
           <FooterContactButton />
-          <FooterLinks
-            email={email}
-            instagram={instagram}
-            tiktok={tiktok}
-            facebook={facebook}
-          />
-          <LogoWrapper>
-            <LogoSvg />
-          </LogoWrapper>
+          <BottomWrapper>
+            <FooterLinks
+              email={email}
+              instagram={instagram}
+              tiktok={tiktok}
+              facebook={facebook}
+            />
+            <LogoWrapper>
+              <LogoSvg />
+            </LogoWrapper>
+          </BottomWrapper>
         </Inner>
       </LayoutWrapper>
     </FooterWrapper>

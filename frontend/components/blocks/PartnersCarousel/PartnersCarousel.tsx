@@ -8,6 +8,9 @@ import pxToRem from "../../../utils/pxToRem";
 const PartnersCarouselWrapper = styled.section`
   padding: ${pxToRem(64)} 0;
   margin-bottom: ${pxToRem(120)};
+  position: relative;
+  z-index: 2;
+  background: var(--colour-off-white);
 
   @media ${(props) => props.theme.mediaBreakpoints.mobile} {
     padding: ${pxToRem(24)} 0;

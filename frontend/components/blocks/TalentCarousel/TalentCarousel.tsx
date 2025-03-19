@@ -6,6 +6,9 @@ import pxToRem from "../../../utils/pxToRem";
 
 const TalentCarouselWrapper = styled.section`
   margin-bottom: ${pxToRem(64)};
+  position: relative;
+  z-index: 2;
+  background: var(--colour-off-white);
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     margin-bottom: 0;

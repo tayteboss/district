@@ -38,23 +38,35 @@ const FooterLinks = (props: Props) => {
     <FooterLinksWrapper>
       <SocialLinks>
         {instagram && (
-          <Link href={instagram} target="_blank" className="type-button">
+          <Link
+            href={instagram}
+            target="_blank"
+            className="type-button hover-link"
+          >
             Instagram
           </Link>
         )}
         {tiktok && (
-          <Link href={tiktok} target="_blank" className="type-button">
+          <Link
+            href={tiktok}
+            target="_blank"
+            className="type-button hover-link"
+          >
             TikTok
           </Link>
         )}
         {facebook && (
-          <Link href={facebook} target="_blank" className="type-button">
+          <Link
+            href={facebook}
+            target="_blank"
+            className="type-button hover-link"
+          >
             Facebook
           </Link>
         )}
       </SocialLinks>
       <Terms>
-        <Link href="terms-conditions" className="type-button">
+        <Link href="terms-conditions" className="type-button hover-link">
           Terms and Conditions
         </Link>
       </Terms>

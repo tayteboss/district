@@ -93,10 +93,12 @@ export const GlobalStyles = createGlobalStyle`
 		line-height: 1.1;
 		font-family: var(--font-suisse);
 		font-weight: 400;
+		letter-spacing: -1.28px;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
 			font-size: ${pxToRem(28)};
 			line-height: 1.2;
+			letter-spacing: -0.3px;
 		}
 	}
 
@@ -193,10 +195,12 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: ${pxToRem(128)};
 		line-height: 1.1;
 		font-family: var(--font-suisse);
+		letter-spacing: -1.28px;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
 			font-size: ${pxToRem(72)};
 			line-height: 1.2;
+			letter-spacing: -0.48px;
 		}
 
 		@media ${theme.mediaBreakpoints.mobile} {

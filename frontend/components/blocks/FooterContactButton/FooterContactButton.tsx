@@ -1,19 +1,12 @@
 import Link from "next/link";
 import styled from "styled-components";
-import pxToRem from "../../../utils/pxToRem";
 
-const FooterContactButtonWrapper = styled.div`
-  margin-bottom: ${pxToRem(240)};
-
-  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-    margin-bottom: ${pxToRem(164)};
-  }
-`;
+const FooterContactButtonWrapper = styled.div``;
 
 const FooterContactButton = () => {
   return (
     <FooterContactButtonWrapper>
-      <Link href="/contact" className="type-super">
+      <Link href="/contact" className="type-super hover-link">
         Contact Us
       </Link>
     </FooterContactButtonWrapper>
