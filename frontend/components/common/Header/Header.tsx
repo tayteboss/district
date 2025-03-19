@@ -5,6 +5,8 @@ import pxToRem from "../../../utils/pxToRem";
 import LogoSvg from "../../svgs/LogoSvg";
 import ButtonLayout from "../../layout/ButtonLayout";
 import MenuTrigger from "../../elements";
+import { useEffect, useState } from "react";
+import throttle from "lodash.throttle";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -15,11 +17,13 @@ const HeaderWrapper = styled.header`
   background: var(--colour-off-white);
 `;
 
-const Inner = styled.div`
+const Inner = styled.div<{ $isEngaged: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${pxToRem(40)} 0;
+  padding: ${(props) => (props.$isEngaged ? pxToRem(40) : pxToRem(16))} 0;
+
+  transition: all var(--transition-speed-default) var(--transition-ease);
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     padding: ${pxToRem(16)} 0;
@@ -67,10 +71,28 @@ type Props = {
 const Header = (props: Props) => {
   const { menuIsOpen, setMenuIsOpen } = props;
 
+  const [isEngaged, setIsEngaged] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const scrollingUp = scrollTop < lastScrollTop;
+    const atTopOfPage = scrollTop < 10;
+
+    setIsEngaged(scrollingUp || atTopOfPage);
+    setLastScrollTop(scrollTop);
+  };
+
+  useEffect(() => {
+    const throttledHandleScroll = throttle(handleScroll, 100);
+    window.addEventListener("scroll", throttledHandleScroll);
+    return () => window.removeEventListener("scroll", throttledHandleScroll);
+  }, []);
+
   return (
     <HeaderWrapper className="header">
       <LayoutWrapper>
-        <Inner>
+        <Inner $isEngaged={isEngaged}>
           <NavList>
             <Link href="/about" className="type-button">
               About
@@ -85,7 +107,7 @@ const Header = (props: Props) => {
             </Link>
           </LogoWrapper>
           <ContactWrapper>
-            <Link href="/contact">
+            <Link href="/contact" className="button-layout">
               <ButtonLayout>Contact Us</ButtonLayout>
             </Link>
           </ContactWrapper>

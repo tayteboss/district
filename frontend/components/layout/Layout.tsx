@@ -20,8 +20,6 @@ const Layout = (props: Props) => {
 
   const lenis = useLenis(({ scroll }) => {});
 
-  console.log("siteOptions", siteOptions);
-
   return (
     <>
       <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />

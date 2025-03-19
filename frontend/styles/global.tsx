@@ -201,6 +201,10 @@ export const GlobalStyles = createGlobalStyle`
 		}
 	}
 
+	.button-layout {
+		display: inline-block;
+	}
+
 	mux-player {
 		--media-object-fit: contain;
 		--media-object-position: center;

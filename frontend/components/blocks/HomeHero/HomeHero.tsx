@@ -9,10 +9,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const HomeHeroWrapper = styled.section`
-  margin-bottom: ${pxToRem(120)};
+  margin-bottom: ${pxToRem(16)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-    margin-bottom: ${pxToRem(16)};
+    margin-bottom: 0;
   }
 `;
 

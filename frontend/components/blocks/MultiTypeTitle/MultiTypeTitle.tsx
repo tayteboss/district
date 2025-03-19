@@ -5,16 +5,26 @@ import pxToRem from "../../../utils/pxToRem";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { AnimatePresence, motion, stagger } from "framer-motion";
+import Link from "next/link";
+import ButtonLayout from "../../layout/ButtonLayout";
 
-const MultiTypeTitleWrapper = styled.section``;
+const MultiTypeTitleWrapper = styled.section`
+  padding: ${pxToRem(64)};
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletMedium} {
+    padding: ${pxToRem(48)} 0;
+  }
+`;
 
 const Inner = styled(motion.div)`
   grid-column: 2 / -1;
-  padding: ${pxToRem(64)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;
-    padding: ${pxToRem(48)} 0;
+  }
+
+  span:first-child {
+    padding-left: 16vw;
   }
 `;
 
@@ -38,6 +48,16 @@ const AllCaps = styled(motion.span)`
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     font-size: ${pxToRem(28)};
     line-height: 1.2;
+  }
+`;
+
+const LinkWrapper = styled.div`
+  grid-column: 2 / -1;
+  padding-top: ${pxToRem(64)};
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+    grid-column: 1 / -1;
+    padding-top: ${pxToRem(48)};
   }
 `;
 
@@ -79,10 +99,12 @@ const childVariants = {
 
 type Props = {
   data: Array<MultiTypeBlockType>;
+  linkUrl?: string;
+  linkTitle?: string;
 };
 
 const MultiTypeTitle = (props: Props) => {
-  const { data } = props;
+  const { data, linkUrl, linkTitle } = props;
 
   const hasData = data && data.length > 0;
 
@@ -91,6 +113,8 @@ const MultiTypeTitle = (props: Props) => {
     threshold: 0.01,
     rootMargin: "-50px",
   });
+
+  const useButton = linkUrl && linkTitle;
 
   return (
     <>
@@ -129,6 +153,13 @@ const MultiTypeTitle = (props: Props) => {
                 </Inner>
               )}
             </AnimatePresence>
+            {useButton && (
+              <LinkWrapper>
+                <Link href={linkUrl} className="button-layout">
+                  <ButtonLayout>{linkTitle}</ButtonLayout>
+                </Link>
+              </LinkWrapper>
+            )}
           </LayoutGrid>
         </MultiTypeTitleWrapper>
       )}

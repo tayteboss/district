@@ -38,7 +38,7 @@ const Page = (props: Props) => {
         description={data?.seoDescription || ""}
       />
       <HomeHero heroMedia={data?.heroMedia} heroTitle={data?.heroTitle} />
-      <HomePortfolio />
+      <HomePortfolio portfolioTitle={data?.portfolioTitle} />
       <PartnersCarousel />
       <TalentCarousel />
       {/* <MultiTypeTitle /> */}
