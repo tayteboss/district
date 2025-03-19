@@ -57,8 +57,7 @@ const Page = (props: Props) => {
           />
         </LayoutWrapper>
       </AboutTitle>
-      {/* <MultiTypeTitle /> */}
-      <ServicesList />
+      <ServicesList data={data?.servicesList} />
       <HomeGallery />
     </PageWrapper>
   );

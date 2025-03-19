@@ -92,6 +92,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: ${pxToRem(64)};
 		line-height: 1.1;
 		font-family: var(--font-suisse);
+		font-weight: 400;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
 			font-size: ${pxToRem(28)};
@@ -116,6 +117,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: ${pxToRem(50)};
 		line-height: 1.1;
 		font-family: var(--font-suisse);
+		font-weight: 400;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
 			font-size: ${pxToRem(26)};
@@ -128,6 +130,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: ${pxToRem(40)};
 		line-height: 1.1;
 		font-family: var(--font-suisse);
+		font-weight: 400;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait} {
 			font-size: ${pxToRem(24)};
