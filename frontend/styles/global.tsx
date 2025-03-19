@@ -206,6 +206,14 @@ export const GlobalStyles = createGlobalStyle`
 		display: inline-block;
 	}
 
+	.hover-link {
+		transition: all var(--transition-speed-default) var(--transition-ease);
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
 	mux-player {
 		--media-object-fit: contain;
 		--media-object-position: center;

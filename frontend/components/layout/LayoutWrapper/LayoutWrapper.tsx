@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   padding: 0 ${pxToRem(64)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-    padding: 0 ${pxToRem(16)};
+    padding: 0 ${pxToRem(12)};
   }
 `;
 

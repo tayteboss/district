@@ -16,8 +16,8 @@ const MultiTypeTitleWrapper = styled.section`
   }
 `;
 
-const Inner = styled(motion.div)`
-  grid-column: 2 / -1;
+const Inner = styled(motion.div)<{ $useLeftAlign: boolean }>`
+  grid-column: ${(props) => (props.$useLeftAlign ? "1 / -2" : "2 / -1")};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;
@@ -51,8 +51,8 @@ const AllCaps = styled(motion.span)`
   }
 `;
 
-const LinkWrapper = styled.div`
-  grid-column: 2 / -1;
+const LinkWrapper = styled.div<{ $useLeftAlign: boolean }>`
+  grid-column: ${(props) => (props.$useLeftAlign ? "1 / -2" : "2 / -1")};
   padding-top: ${pxToRem(64)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
@@ -101,10 +101,11 @@ type Props = {
   data: Array<MultiTypeBlockType>;
   linkUrl?: string;
   linkTitle?: string;
+  useLeftAlign?: boolean;
 };
 
 const MultiTypeTitle = (props: Props) => {
-  const { data, linkUrl, linkTitle } = props;
+  const { data, linkUrl, linkTitle, useLeftAlign = false } = props;
 
   const hasData = data && data.length > 0;
 
@@ -128,6 +129,7 @@ const MultiTypeTitle = (props: Props) => {
                   initial="hidden"
                   animate="visible"
                   exit="hidden"
+                  $useLeftAlign={useLeftAlign}
                 >
                   {data.map((item, i) => {
                     const isSerifType = item.fontStyle === "serif";
@@ -154,7 +156,7 @@ const MultiTypeTitle = (props: Props) => {
               )}
             </AnimatePresence>
             {useButton && (
-              <LinkWrapper>
+              <LinkWrapper $useLeftAlign={useLeftAlign}>
                 <Link href={linkUrl} className="button-layout">
                   <ButtonLayout>{linkTitle}</ButtonLayout>
                 </Link>

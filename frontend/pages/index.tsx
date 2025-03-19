@@ -11,10 +11,13 @@ import MultiTypeTitle from "../components/blocks/MultiTypeTitle";
 import PartnersCarousel from "../components/blocks/PartnersCarousel";
 import ServicesList from "../components/blocks/ServicesList";
 import TalentCarousel from "../components/blocks/TalentCarousel";
+import LayoutWrapper from "../components/layout/LayoutWrapper";
 
 const PageWrapper = styled(motion.div)`
   padding-top: var(--header-h);
 `;
+
+const AboutTitle = styled.section``;
 
 type Props = {
   data: HomePageType;
@@ -43,7 +46,17 @@ const Page = (props: Props) => {
         data={data?.partnersLogos}
         title={data?.partnersTitle}
       />
-      <TalentCarousel />
+      <TalentCarousel data={data?.featuredTalent} />
+      <AboutTitle>
+        <LayoutWrapper>
+          <MultiTypeTitle
+            data={data?.aboutTitle}
+            useLeftAlign={true}
+            linkUrl="/about"
+            linkTitle="About"
+          />
+        </LayoutWrapper>
+      </AboutTitle>
       {/* <MultiTypeTitle /> */}
       <ServicesList />
       <HomeGallery />

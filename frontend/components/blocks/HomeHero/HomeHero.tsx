@@ -61,7 +61,7 @@ const HomeHero = (props: Props) => {
   const transformLogo = useTransform(
     scrollY,
     [0, 5000],
-    ["scale(1) translateY(0px)", "scale(0.7) translateY(-250px)"]
+    ["scale(1) translateY(0px)", "scale(0.7) translateY(-100px)"]
   );
 
   return (

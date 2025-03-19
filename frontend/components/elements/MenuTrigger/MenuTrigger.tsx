@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import CrossSvg from "../svgs/CrossSvg";
+import CrossSvg from "../../svgs/CrossSvg";
 
 const MenuTriggerWrapper = styled.button`
   display: none;

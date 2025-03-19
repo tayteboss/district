@@ -67,7 +67,7 @@ const PartnersCarousel = (props: Props) => {
                   key={i}
                   className="marquee-item"
                 >
-                  <LogoWrapper>
+                  <LogoWrapper className="hover-link">
                     <Image
                       src={item?.logo?.asset?.url}
                       alt={item.title}

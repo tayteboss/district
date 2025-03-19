@@ -39,10 +39,12 @@ export type SiteSettingsType = {
 };
 
 export type TalentType = {
-  name: string;
+  title: string;
   slug: SlugType;
   tags: Array<string>;
   description: string;
+  featuredTag: string;
+  featuredSocialLink: string;
   socialLinks: Array<SocialLinkType>;
   heroThumbnail: {
     asset: {

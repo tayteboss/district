@@ -4,9 +4,9 @@ import Link from "next/link";
 import pxToRem from "../../../utils/pxToRem";
 import LogoSvg from "../../svgs/LogoSvg";
 import ButtonLayout from "../../layout/ButtonLayout";
-import MenuTrigger from "../../elements";
 import { useEffect, useState } from "react";
 import throttle from "lodash.throttle";
+import MenuTrigger from "../../elements/MenuTrigger";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -94,15 +94,15 @@ const Header = (props: Props) => {
       <LayoutWrapper>
         <Inner $isEngaged={isEngaged}>
           <NavList>
-            <Link href="/about" className="type-button">
+            <Link href="/about" className="type-button hover-link">
               About
             </Link>
-            <Link href="/portfolio" className="type-button">
+            <Link href="/portfolio" className="type-button hover-link">
               Portfolio
             </Link>
           </NavList>
           <LogoWrapper>
-            <Link href="/">
+            <Link href="/" className="hover-link">
               <LogoSvg />
             </Link>
           </LogoWrapper>

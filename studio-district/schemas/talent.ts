@@ -49,6 +49,16 @@ export default {
       type: 'text',
     },
     {
+      title: 'Featured @ tag',
+      name: 'featuredTag',
+      type: 'string',
+    },
+    {
+      title: 'Featured social link',
+      name: 'featuredSocialLink',
+      type: 'url',
+    },
+    {
       title: 'Social Links',
       name: 'socialLinks',
       type: 'array',
