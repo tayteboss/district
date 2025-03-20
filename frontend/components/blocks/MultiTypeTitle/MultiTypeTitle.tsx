@@ -8,8 +8,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import ButtonLayout from "../../layout/ButtonLayout";
 
-const MultiTypeTitleWrapper = styled.section`
-  padding: ${pxToRem(64)};
+const MultiTypeTitleWrapper = styled.section<{ $useLeftAlign: boolean }>`
+  padding: ${(props) =>
+    props.$useLeftAlign ? `${pxToRem(64)} 0` : pxToRem(64)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletMedium} {
     padding: ${pxToRem(48)} 0;
@@ -17,9 +18,10 @@ const MultiTypeTitleWrapper = styled.section`
 `;
 
 const Inner = styled(motion.div)<{ $useLeftAlign: boolean }>`
-  grid-column: ${(props) => (props.$useLeftAlign ? "1 / -2" : "2 / -1")};
+  grid-column: ${(props) => (props.$useLeftAlign ? "1 / -3" : "2 / -1")};
   position: relative;
   text-indent: 20vw;
+  max-width: ${pxToRem(1000)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;
@@ -148,7 +150,7 @@ const MultiTypeTitle = (props: Props) => {
 
   return (
     <>
-      <MultiTypeTitleWrapper ref={ref}>
+      <MultiTypeTitleWrapper ref={ref} $useLeftAlign={useLeftAlign}>
         {hasData && (
           <LayoutGrid>
             <AnimatePresence>
