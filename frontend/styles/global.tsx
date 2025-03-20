@@ -37,8 +37,8 @@ export const GlobalStyles = createGlobalStyle`
 	-webkit-text-size-adjust: 100%;
 
 	::selection {
-		background-color: black;
-		color: white;
+		background-color: var(--colour-matcha);
+		color: var(--colour-black);
 	}
 
 	html {

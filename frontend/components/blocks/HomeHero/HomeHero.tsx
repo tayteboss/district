@@ -80,6 +80,14 @@ const HomeHero = (props: Props) => {
     ["scale(1) translateY(0px)", "scale(0.7) translateY(-100px)"]
   );
 
+  const filterLogo = useTransform(
+    scrollY,
+    [0, 2000],
+    ["blur(0px)", "blur(15px)"]
+  );
+
+  const opacityLogo = useTransform(scrollY, [0, 2000], ["1", "0.75"]);
+
   const transformImage = useTransform(
     scrollY,
     [0, 3500],
@@ -91,7 +99,13 @@ const HomeHero = (props: Props) => {
       <div ref={ref2}>
         <LayoutWrapper>
           <MultiTypeTitle data={heroTitle} />
-          <LogoWrapper style={{ transform: transformLogo }}>
+          <LogoWrapper
+            style={{
+              transform: transformLogo,
+              filter: filterLogo,
+              opacity: opacityLogo,
+            }}
+          >
             <LogoSvg />
           </LogoWrapper>
         </LayoutWrapper>
