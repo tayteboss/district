@@ -4,7 +4,7 @@ import LayoutGrid from "../../layout/LayoutGrid";
 import pxToRem from "../../../utils/pxToRem";
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { AnimatePresence, motion, stagger } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import ButtonLayout from "../../layout/ButtonLayout";
 
@@ -18,13 +18,21 @@ const MultiTypeTitleWrapper = styled.section`
 
 const Inner = styled(motion.div)<{ $useLeftAlign: boolean }>`
   grid-column: ${(props) => (props.$useLeftAlign ? "1 / -2" : "2 / -1")};
+  position: relative;
+  text-indent: 20vw;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;
   }
+`;
 
-  span:first-child {
-    padding-left: 16vw;
+const SubTitle = styled.h3`
+  position: absolute;
+  top: 43px;
+  left: -20vw;
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+    top: -36px;
   }
 `;
 
@@ -54,6 +62,18 @@ const AllCaps = styled(motion.span)`
 const LinkWrapper = styled.div<{ $useLeftAlign: boolean }>`
   grid-column: ${(props) => (props.$useLeftAlign ? "1 / -2" : "2 / -1")};
   padding-top: ${pxToRem(64)};
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+    grid-column: 1 / -1;
+    padding-top: ${pxToRem(48)};
+  }
+`;
+
+const Description = styled.p`
+  padding-top: ${pxToRem(64)};
+  grid-column: 2 / -1;
+  position: relative;
+  text-indent: 20vw;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;
@@ -102,10 +122,19 @@ type Props = {
   linkUrl?: string;
   linkTitle?: string;
   useLeftAlign?: boolean;
+  subTitle?: string;
+  description?: string;
 };
 
 const MultiTypeTitle = (props: Props) => {
-  const { data, linkUrl, linkTitle, useLeftAlign = false } = props;
+  const {
+    data,
+    linkUrl,
+    linkTitle,
+    useLeftAlign = false,
+    subTitle,
+    description,
+  } = props;
 
   const hasData = data && data.length > 0;
 
@@ -152,11 +181,28 @@ const MultiTypeTitle = (props: Props) => {
                       </AllCaps>
                     );
                   })}
+                  {subTitle && (
+                    <SubTitle className="type-button">{subTitle}</SubTitle>
+                  )}
                 </Inner>
               )}
             </AnimatePresence>
+            {description && (
+              <Description
+                className={`view-element-fade-in ${
+                  inView ? "view-element-fade-in--in-view" : ""
+                }`}
+              >
+                {description}
+              </Description>
+            )}
             {useButton && (
-              <LinkWrapper $useLeftAlign={useLeftAlign}>
+              <LinkWrapper
+                $useLeftAlign={useLeftAlign}
+                className={`view-element-fade-in ${
+                  inView ? "view-element-fade-in--in-view" : ""
+                }`}
+              >
                 <Link href={linkUrl} className="button-layout">
                   <ButtonLayout>{linkTitle}</ButtonLayout>
                 </Link>

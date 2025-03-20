@@ -8,9 +8,14 @@ import AboutHero from "../components/blocks/AboutHero";
 import OurPeopleList from "../components/blocks/OurPeopleList";
 import OurPeopleTitle from "../components/blocks/OurPeopleTitle";
 import ServicesList from "../components/blocks/ServicesList";
+import AboutIntro from "../components/blocks/AboutIntro";
 
 const PageWrapper = styled(motion.div)`
   padding-top: var(--header-h);
+  position: relative;
+  z-index: 2;
+  margin-bottom: 100vh;
+  background: var(--colour-off-white);
 `;
 
 type Props = {
@@ -34,10 +39,18 @@ const Page = (props: Props) => {
         title={data?.seoTitle || ""}
         description={data?.seoDescription || ""}
       />
-      <AboutHero />
-      <ServicesList />
-      <OurPeopleTitle />
-      <OurPeopleList />
+      <AboutHero
+        founderImage={data?.founderImage}
+        founderTitle={data?.founderTitle}
+      />
+      <AboutIntro
+        heroSubTitle={data?.heroSubTitle}
+        heroTitle={data?.heroTitle}
+        heroDescription={data?.heroDescription}
+      />
+      <ServicesList data={data?.servicesList} />
+      <OurPeopleTitle data={data?.ourPeopleTitle} />
+      <OurPeopleList data={data?.people} />
     </PageWrapper>
   );
 };

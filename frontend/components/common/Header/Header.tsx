@@ -14,7 +14,8 @@ const HeaderWrapper = styled.header`
   left: 0;
   width: 100%;
   z-index: 100;
-  background: var(--colour-off-white);
+  background: rgba(246, 244, 237, 0.5);
+  backdrop-filter: blur(10px);
 `;
 
 const Inner = styled.div<{ $isEngaged: boolean }>`
