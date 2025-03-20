@@ -70,7 +70,7 @@ const HomeHero = (props: Props) => {
 
   const transformMedia = useTransform(
     scrollY,
-    [0, 5000],
+    [0, 3000],
     ["translateY(0px)", "translateY(-500px)"]
   );
 
@@ -78,12 +78,6 @@ const HomeHero = (props: Props) => {
     scrollY,
     [0, 5000],
     ["scale(1) translateY(0px)", "scale(0.7) translateY(-100px)"]
-  );
-
-  const filterLogo = useTransform(
-    scrollY,
-    [0, 2000],
-    ["blur(0px)", "blur(15px)"]
   );
 
   const opacityLogo = useTransform(scrollY, [0, 2000], ["1", "0.75"]);
@@ -102,7 +96,6 @@ const HomeHero = (props: Props) => {
           <LogoWrapper
             style={{
               transform: transformLogo,
-              filter: filterLogo,
               opacity: opacityLogo,
             }}
           >

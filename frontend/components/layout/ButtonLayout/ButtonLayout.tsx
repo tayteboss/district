@@ -2,7 +2,7 @@ import styled from "styled-components";
 import pxToRem from "../../../utils/pxToRem";
 import ArrowSvg from "../../svgs/ArrowSvg";
 
-const ButtonLayoutWrapper = styled.div`
+const ButtonLayoutWrapper = styled.div<{ $isActive?: boolean }>`
   background: var(--colour-matcha);
   color: var(--colour-black);
   padding: ${pxToRem(7)} ${pxToRem(12)} ${pxToRem(4)};
@@ -18,6 +18,10 @@ const ButtonLayoutWrapper = styled.div`
     background: var(--colour-black);
     color: var(--colour-off-white);
 
+    * {
+      color: var(--colour-off-white);
+    }
+
     svg {
       transform: rotate(90deg);
 
@@ -27,11 +31,18 @@ const ButtonLayoutWrapper = styled.div`
     }
   }
 
+  * {
+    cursor: pointer;
+
+    transition: all var(--transition-speed-default) var(--transition-ease);
+  }
+
   svg {
     height: 10px;
     width: 10px;
     position: relative;
     top: -1px;
+    transform: ${(props) => props.$isActive && "rotate(90deg)"};
 
     transition: all var(--transition-speed-default) var(--transition-ease);
 
@@ -43,13 +54,14 @@ const ButtonLayoutWrapper = styled.div`
 
 type Props = {
   children: React.ReactNode;
+  isActive?: boolean;
 };
 
 const ButtonLayout = (props: Props) => {
-  const { children } = props;
+  const { children, isActive } = props;
 
   return (
-    <ButtonLayoutWrapper className="type-button">
+    <ButtonLayoutWrapper className="type-button" $isActive={isActive}>
       {children} <ArrowSvg />
     </ButtonLayoutWrapper>
   );

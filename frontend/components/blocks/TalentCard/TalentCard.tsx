@@ -60,6 +60,7 @@ const Tags = styled.div`
 const Tag = styled.span`
   opacity: 0.6;
   white-space: pre;
+  text-transform: capitalize;
 `;
 
 type Props = {

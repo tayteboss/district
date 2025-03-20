@@ -33,6 +33,7 @@ const FounderWrapper = styled(motion.div)<{ $inView: boolean }>`
     background: var(--colour-off-white);
 
     transition: all var(--transition-speed-slow) var(--transition-ease);
+    transition-delay: 1000ms;
   }
 
   img {

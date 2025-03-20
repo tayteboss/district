@@ -45,6 +45,26 @@ export default {
       type: 'url',
     },
     {
+      title: 'For brands button title',
+      name: 'forBrandsButtonTitle',
+      type: 'string',
+    },
+    {
+      title: 'For brands button link',
+      name: 'forBrandsButtonLink',
+      type: 'string',
+    },
+    {
+      title: 'For talent button title',
+      name: 'forTalentButtonTitle',
+      type: 'string',
+    },
+    {
+      title: 'For talent button link',
+      name: 'forTalentButtonLink',
+      type: 'string',
+    },
+    {
       title: 'Terms & Conditions Content',
       name: 'termsAndConditions',
       type: 'array',

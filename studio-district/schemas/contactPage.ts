@@ -19,25 +19,5 @@ export default {
       name: 'seoDescription',
       type: 'string',
     },
-    {
-      title: 'For brands button title',
-      name: 'forBrandsButtonTitle',
-      type: 'string',
-    },
-    {
-      title: 'For brands button link',
-      name: 'forBrandsButtonLink',
-      type: 'string',
-    },
-    {
-      title: 'For talent button title',
-      name: 'forTalentButtonTitle',
-      type: 'string',
-    },
-    {
-      title: 'For talent button link',
-      name: 'forTalentButtonLink',
-      type: 'string',
-    },
   ],
 }

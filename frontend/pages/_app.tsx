@@ -13,10 +13,13 @@ import useHeaderHeight from "../hooks/useHeaderHeight";
 import Cursor from "../components/elements/Cursor";
 
 const pageTransitionVariants: TransitionsType = {
-  hidden: { filter: "blur(20px)", transition: { duration: 1 } },
+  hidden: {
+    filter: "blur(20px)",
+    transition: { duration: 0.75 },
+  },
   visible: {
     filter: "blur(0px)",
-    transition: { duration: 1, delay: 0.25 },
+    transition: { duration: 0.75, delay: 0.25 },
   },
 };
 

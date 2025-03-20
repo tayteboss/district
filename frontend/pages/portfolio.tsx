@@ -50,8 +50,6 @@ const Page = (props: Props) => {
     }
   }, [activeTags]);
 
-  console.log("activeTags", activeTags);
-
   return (
     <PageWrapper
       variants={pageTransitionVariants}

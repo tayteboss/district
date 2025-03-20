@@ -36,6 +36,10 @@ export type SiteSettingsType = {
   officeAddress: string;
   officeGoogleMapsLink: string;
   termsAndConditions: any[];
+  forBrandsButtonTitle: string;
+  forBrandsButtonLink: string;
+  forTalentButtonTitle: string;
+  forTalentButtonLink: string;
 };
 
 export type TalentType = {
@@ -58,7 +62,7 @@ export type TalentType = {
       };
       alt: string;
     };
-  };
+  }[];
 };
 
 type SocialLinkType = {
@@ -84,10 +88,6 @@ export type ContactPageType = {
   referenceTitle: string;
   seoTitle: string;
   seoDescription: string;
-  forBrandsButtonTitle: string;
-  forBrandsButtonLink: string;
-  forTalentButtonTitle: string;
-  forTalentButtonLink: string;
 };
 
 export type PortfolioPageType = {

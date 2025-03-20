@@ -54,8 +54,18 @@ export const GlobalStyles = createGlobalStyle`
 		}
 	}
 
+	.uppercase {
+		text-transform: uppercase;
+	}
+
 	body {
 		position: relative;
+		
+		&.modal-open {
+			.header {
+				background: transparent !important;
+			}
+		}
 	}
 
 	input,
@@ -278,8 +288,9 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	.embla__slide {
-		flex: 0 0 100%;
+		flex: 0 0 26%;
 		min-width: 0;
+		margin-right: 4px;
 	}
 
 	.performance {

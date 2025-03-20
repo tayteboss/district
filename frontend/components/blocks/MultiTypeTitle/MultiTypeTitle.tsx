@@ -21,7 +21,7 @@ const Inner = styled(motion.div)<{ $useLeftAlign: boolean }>`
   grid-column: ${(props) => (props.$useLeftAlign ? "1 / -3" : "2 / -1")};
   position: relative;
   text-indent: 20vw;
-  max-width: ${pxToRem(1000)};
+  max-width: ${pxToRem(1200)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;

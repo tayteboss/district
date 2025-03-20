@@ -53,10 +53,11 @@ const wrapperVariants = {
 type Props = {
   menuIsOpen: boolean;
   setMenuIsOpen: (value: boolean) => void;
+  setContactModalIsOpen: (value: boolean) => void;
 };
 
 const Menu = (props: Props) => {
-  const { menuIsOpen, setMenuIsOpen } = props;
+  const { menuIsOpen, setMenuIsOpen, setContactModalIsOpen } = props;
 
   return (
     <AnimatePresence>
@@ -84,9 +85,14 @@ const Menu = (props: Props) => {
                 Portfolio
               </Link>
               <ContactWrapper onClick={() => setMenuIsOpen(false)}>
-                <Link href="/contact">
-                  <ButtonLayout>Contact Us</ButtonLayout>
-                </Link>
+                <ButtonLayout>
+                  <button
+                    className="type-button"
+                    onClick={() => setContactModalIsOpen(true)}
+                  >
+                    Contact Us
+                  </button>
+                </ButtonLayout>
               </ContactWrapper>
             </NavList>
           </Inner>

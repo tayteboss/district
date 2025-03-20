@@ -62,15 +62,28 @@ const ContactWrapper = styled.div`
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     display: none;
   }
+
+  div,
+  button {
+    display: inline-block;
+    text-align: right;
+  }
 `;
 
 type Props = {
   menuIsOpen: boolean;
+  contactModalIsOpen: boolean;
   setMenuIsOpen: (value: boolean) => void;
+  setContactModalIsOpen: (value: boolean) => void;
 };
 
 const Header = (props: Props) => {
-  const { menuIsOpen, setMenuIsOpen } = props;
+  const {
+    menuIsOpen,
+    contactModalIsOpen,
+    setMenuIsOpen,
+    setContactModalIsOpen,
+  } = props;
 
   const [isEngaged, setIsEngaged] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -109,9 +122,14 @@ const Header = (props: Props) => {
             </Link>
           </LogoWrapper>
           <ContactWrapper>
-            <Link href="/contact" className="button-layout">
-              <ButtonLayout>Contact Us</ButtonLayout>
-            </Link>
+            <ButtonLayout isActive={contactModalIsOpen}>
+              <button
+                className="type-button"
+                onClick={() => setContactModalIsOpen(!contactModalIsOpen)}
+              >
+                {contactModalIsOpen ? "Close Overlay" : "Contact Us"}
+              </button>
+            </ButtonLayout>
           </ContactWrapper>
           <MenuTrigger menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
         </Inner>
