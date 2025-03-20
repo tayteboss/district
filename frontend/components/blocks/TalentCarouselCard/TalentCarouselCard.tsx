@@ -96,7 +96,7 @@ const TalentCarouselCard = (props: Props) => {
       </ContentBar>
       {heroThumbnail?.asset?.url && (
         <ImageWrapper
-          className="talent-carousel-card__image-wrapper"
+          className="talent-carousel-card__image-wrapper cursor-link"
           onClick={handleClick}
         >
           <BorderAnimation />

@@ -88,31 +88,32 @@ const ImageComponent = (props: Props) => {
   return (
     <ImageComponentWrapper className="media-wrapper">
       <AnimatePresence initial={false}>
-        {inView && data?.media?.image?.asset?.metadata?.lqip && (
-          <InnerBlur
-            variants={wrapperVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-          >
-            <Image
-              src={blurDataURL}
-              alt={data?.media?.image?.alt || ""}
-              priority={isPriority}
-              blurDataURL={blurDataURL}
-              fill
-              style={{
-                objectFit: "cover",
-              }}
-              sizes="50vw"
-            />
-          </InnerBlur>
-        )}
+        {(inView || isPriority) &&
+          data?.media?.image?.asset?.metadata?.lqip && (
+            <InnerBlur
+              variants={wrapperVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
+              <Image
+                src={blurDataURL}
+                alt={data?.media?.image?.alt || ""}
+                priority={isPriority}
+                blurDataURL={blurDataURL}
+                fill
+                style={{
+                  objectFit: "cover",
+                }}
+                sizes="50vw"
+              />
+            </InnerBlur>
+          )}
       </AnimatePresence>
       <Inner
         variants={defaultVariants}
         initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        animate={inView || isPriority ? "visible" : "hidden"}
       >
         {imageUrl && (
           <Image

@@ -1,16 +1,9 @@
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
-import {
-  HomePageType,
-  SiteSettingsType,
-  TransitionsType,
-} from "../shared/types/types";
+import { HomePageType, TransitionsType } from "../shared/types/types";
 import { motion } from "framer-motion";
 import client from "../client";
-import {
-  homePageQueryString,
-  siteSettingsQueryString,
-} from "../lib/sanityQueries";
+import { homePageQueryString } from "../lib/sanityQueries";
 import HomeGallery from "../components/blocks/HomeGallery";
 import HomeHero from "../components/blocks/HomeHero";
 import HomePortfolio from "../components/blocks/HomePortfolio";
@@ -37,13 +30,10 @@ const AboutTitle = styled.section`
 type Props = {
   data: HomePageType;
   pageTransitionVariants: TransitionsType;
-  siteOptions: SiteSettingsType;
 };
 
 const Page = (props: Props) => {
-  const { data, siteOptions, pageTransitionVariants } = props;
-
-  console.log("data", data);
+  const { data, pageTransitionVariants } = props;
 
   return (
     <>
@@ -83,12 +73,10 @@ const Page = (props: Props) => {
 
 export async function getStaticProps() {
   const data = await client.fetch(homePageQueryString);
-  const siteOptions = await client.fetch(siteSettingsQueryString);
 
   return {
     props: {
       data,
-      siteOptions,
     },
   };
 }

@@ -119,8 +119,8 @@ const MultiTypeTitle = (props: Props) => {
 
   return (
     <>
-      {hasData && (
-        <MultiTypeTitleWrapper ref={ref}>
+      <MultiTypeTitleWrapper ref={ref}>
+        {hasData && (
           <LayoutGrid>
             <AnimatePresence>
               {inView && (
@@ -163,8 +163,8 @@ const MultiTypeTitle = (props: Props) => {
               </LinkWrapper>
             )}
           </LayoutGrid>
-        </MultiTypeTitleWrapper>
-      )}
+        )}
+      </MultiTypeTitleWrapper>
     </>
   );
 };

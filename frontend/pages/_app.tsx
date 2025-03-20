@@ -10,6 +10,7 @@ import { GlobalStyles } from "../styles/global";
 import use1vh from "../hooks/use1vh";
 import { TransitionsType } from "../shared/types/types";
 import useHeaderHeight from "../hooks/useHeaderHeight";
+import Cursor from "../components/elements/Cursor";
 
 const pageTransitionVariants: TransitionsType = {
   hidden: { filter: "blur(10px)", transition: { duration: 1 } },
@@ -28,6 +29,7 @@ const App = (props: Props) => {
   const { Component, pageProps } = props;
 
   const [hasVisited, setHasVisited] = useState<boolean>(false);
+  const [appCursorRefresh, setAppCursorRefresh] = useState(0);
 
   const router = useRouter();
   const routerEvents = router.events;
@@ -38,6 +40,18 @@ const App = (props: Props) => {
 
   use1vh();
   useHeaderHeight();
+
+  useEffect(() => {
+    setAppCursorRefresh(appCursorRefresh + 1);
+
+    const timer = setTimeout(() => {
+      setAppCursorRefresh(appCursorRefresh + 1);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [router.asPath]);
 
   useEffect(() => {
     const hasCookies = Cookies.get("visited");
@@ -71,6 +85,10 @@ const App = (props: Props) => {
             />
           </AnimatePresence>
         </Layout>
+        <Cursor
+          cursorRefresh={() => setAppCursorRefresh(appCursorRefresh + 1)}
+          appCursorRefresh={appCursorRefresh}
+        />
       </ThemeProvider>
     </>
   );

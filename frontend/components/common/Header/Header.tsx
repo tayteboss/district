@@ -71,7 +71,7 @@ type Props = {
 const Header = (props: Props) => {
   const { menuIsOpen, setMenuIsOpen } = props;
 
-  const [isEngaged, setIsEngaged] = useState(false);
+  const [isEngaged, setIsEngaged] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
 
   const handleScroll = () => {
@@ -86,6 +86,7 @@ const Header = (props: Props) => {
   useEffect(() => {
     const throttledHandleScroll = throttle(handleScroll, 100);
     window.addEventListener("scroll", throttledHandleScroll);
+    setIsEngaged(true);
     return () => window.removeEventListener("scroll", throttledHandleScroll);
   }, []);
 
