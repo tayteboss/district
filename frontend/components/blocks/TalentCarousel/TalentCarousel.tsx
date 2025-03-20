@@ -29,7 +29,7 @@ const TalentCarouselWrapper = styled.section`
   }
   .rfm-child:nth-child(4n + 2) {
     .talent-carousel-card__image-wrapper {
-      padding-top: 150%;
+      padding-top: 140%;
     }
   }
   .rfm-child:nth-child(4n + 3) {
@@ -39,7 +39,7 @@ const TalentCarouselWrapper = styled.section`
   }
   .rfm-child:nth-child(4n + 4) {
     .talent-carousel-card__image-wrapper {
-      padding-top: 150%;
+      padding-top: 140%;
     }
   }
 `;

@@ -69,13 +69,21 @@ const Menu = (props: Props) => {
         >
           <Inner>
             <NavList>
-              <Link href="/about" className="type-button">
+              <Link
+                href="/about"
+                className="type-button"
+                onClick={() => setMenuIsOpen(false)}
+              >
                 About
               </Link>
-              <Link href="/portfolio" className="type-button">
+              <Link
+                href="/portfolio"
+                className="type-button"
+                onClick={() => setMenuIsOpen(false)}
+              >
                 Portfolio
               </Link>
-              <ContactWrapper>
+              <ContactWrapper onClick={() => setMenuIsOpen(false)}>
                 <Link href="/contact">
                   <ButtonLayout>Contact Us</ButtonLayout>
                 </Link>

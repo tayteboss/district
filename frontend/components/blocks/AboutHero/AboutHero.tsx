@@ -16,7 +16,7 @@ const AboutHeroWrapper = styled.section`
 const FounderWrapper = styled(motion.div)<{ $inView: boolean }>`
   grid-column: span 1;
   width: 100%;
-  padding-top: 150%;
+  padding-top: 140%;
   position: relative;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletLandscape} {

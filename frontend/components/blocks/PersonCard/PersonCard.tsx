@@ -45,7 +45,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ImageRatio = styled.div`
-  padding-top: 150%;
+  padding-top: 140%;
   position: relative;
 `;
 
