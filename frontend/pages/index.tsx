@@ -12,6 +12,7 @@ import PartnersCarousel from "../components/blocks/PartnersCarousel";
 import ServicesList from "../components/blocks/ServicesList";
 import TalentCarousel from "../components/blocks/TalentCarousel";
 import LayoutWrapper from "../components/layout/LayoutWrapper";
+import pxToRem from "../utils/pxToRem";
 
 const PageWrapper = styled(motion.div)`
   padding-top: var(--header-h);
@@ -25,6 +26,7 @@ const AboutTitle = styled.section`
   position: relative;
   z-index: 2;
   background: var(--colour-off-white);
+  margin-bottom: ${pxToRem(64)};
 `;
 
 type Props = {
