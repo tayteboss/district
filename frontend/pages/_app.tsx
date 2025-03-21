@@ -47,6 +47,14 @@ const App = (props: Props) => {
   useEffect(() => {
     setAppCursorRefresh(appCursorRefresh + 1);
 
+    const body = document.querySelector("body");
+
+    if (router?.pathname === "/404") {
+      body?.classList.add("modal-open");
+    } else {
+      body?.classList.remove("modal-open");
+    }
+
     const timer = setTimeout(() => {
       setAppCursorRefresh(appCursorRefresh + 1);
     }, 3000);

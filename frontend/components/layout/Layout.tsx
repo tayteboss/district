@@ -13,6 +13,7 @@ import Menu from "../blocks/Menu";
 import { TalentType } from "../../shared/types/types";
 import TalentModal from "../blocks/TalentModal";
 import ContactModal from "../blocks/ContactModal";
+import { useRouter } from "next/router";
 
 const siteOptions = require("../../json/siteSettings.json");
 const talentData = require("../../json/talentData.json");
@@ -46,6 +47,7 @@ const Layout = (props: Props) => {
   );
 
   const lenis = useLenis(({ scroll }) => {});
+  const router = useRouter();
 
   useEffect(() => {
     if (!activeTalentSlug || !talentModalIsOpen) {
@@ -76,6 +78,11 @@ const Layout = (props: Props) => {
       body.classList.remove("modal-open");
     }
   }, [talentModalIsOpen, menuIsOpen, lenis]);
+
+  useEffect(() => {
+    setTalentModalIsOpen(false);
+    setMenuIsOpen(false);
+  }, [router.asPath]);
 
   return (
     <>
