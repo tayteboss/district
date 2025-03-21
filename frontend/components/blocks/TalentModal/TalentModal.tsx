@@ -21,6 +21,7 @@ const TalentModalWrapper = styled(motion.div)`
 
 const Inner = styled.div`
   padding-top: calc(64px + var(--header-h));
+  padding-bottom: 15vh;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     padding-top: calc(24px + var(--header-h));

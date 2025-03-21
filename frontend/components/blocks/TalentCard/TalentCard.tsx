@@ -68,10 +68,11 @@ type Props = {
   slug: TalentType["slug"];
   tags: TalentType["tags"];
   heroThumbnail: TalentType["heroThumbnail"];
+  featuredTag: TalentType["featuredTag"];
 };
 
 const TalentCard = (props: Props) => {
-  const { title, slug, tags, heroThumbnail } = props;
+  const { title, slug, tags, heroThumbnail, featuredTag } = props;
 
   const { setActiveTalentSlug, setTalentModalIsOpen } =
     useContext(TalentModalContext);
@@ -101,12 +102,7 @@ const TalentCard = (props: Props) => {
       <ContentWrapper>
         {title && <Title className="type-caption">{title}</Title>}
         <Tags>
-          {tags.map((tag, i) => (
-            <Tag key={i} className="type-caption">
-              {tag}
-              {i < tags.length - 1 && tags.length > 1 ? ", " : ""}
-            </Tag>
-          ))}
+          <Tag className="type-caption">{featuredTag}</Tag>
         </Tags>
       </ContentWrapper>
     </TalentCardWrapper>
