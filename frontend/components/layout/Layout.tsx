@@ -82,6 +82,7 @@ const Layout = (props: Props) => {
   useEffect(() => {
     setTalentModalIsOpen(false);
     setMenuIsOpen(false);
+    setContactModalIsOpen(false);
   }, [router.asPath]);
 
   return (

@@ -17,11 +17,14 @@ const MultiTypeTitleWrapper = styled.section<{ $useLeftAlign: boolean }>`
   }
 `;
 
-const Inner = styled(motion.div)<{ $useLeftAlign: boolean }>`
+const Inner = styled(motion.div)<{
+  $useLeftAlign: boolean;
+  $useMaxWidth: number;
+}>`
   grid-column: ${(props) => (props.$useLeftAlign ? "1 / -3" : "2 / -1")};
   position: relative;
   text-indent: 20vw;
-  max-width: ${pxToRem(1200)};
+  max-width: ${(props) => props.$useMaxWidth}px;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;
@@ -126,6 +129,7 @@ type Props = {
   useLeftAlign?: boolean;
   subTitle?: string;
   description?: string;
+  useMaxWidth?: number;
 };
 
 const MultiTypeTitle = (props: Props) => {
@@ -134,6 +138,7 @@ const MultiTypeTitle = (props: Props) => {
     linkUrl,
     linkTitle,
     useLeftAlign = false,
+    useMaxWidth = 1200,
     subTitle,
     description,
   } = props;
@@ -161,6 +166,7 @@ const MultiTypeTitle = (props: Props) => {
                   animate="visible"
                   exit="hidden"
                   $useLeftAlign={useLeftAlign}
+                  $useMaxWidth={useMaxWidth}
                 >
                   {data.map((item, i) => {
                     const isSerifType = item.fontStyle === "serif";

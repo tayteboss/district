@@ -19,7 +19,12 @@ const OurPeopleTitle = (props: Props) => {
     <OurPeopleTitleWrapper>
       <LayoutWrapper>
         {data && (
-          <MultiTypeTitle data={data} subTitle="Our people" useLeftAlign />
+          <MultiTypeTitle
+            data={data}
+            subTitle="Our people"
+            useLeftAlign
+            useMaxWidth={1000}
+          />
         )}
       </LayoutWrapper>
     </OurPeopleTitleWrapper>
