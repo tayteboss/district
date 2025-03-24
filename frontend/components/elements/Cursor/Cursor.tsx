@@ -32,15 +32,15 @@ const CursorRing = styled(motion.div)<StyledProps>`
   flex-flow: row;
   align-content: center;
   justify-content: center;
-  top: ${(props) => (props.$isHoveringLink ? "-100px" : "-200px")};
-  left: ${(props) => (props.$isHoveringLink ? "-100px" : "-200px")};
-  height: ${(props) => (props.$isHoveringLink ? "200px" : "400px")};
-  width: ${(props) => (props.$isHoveringLink ? "200px" : "400px")};
+  top: ${(props) => (props.$isHoveringLink ? "-75px" : "-100px")};
+  left: ${(props) => (props.$isHoveringLink ? "-75px" : "-100px")};
+  height: ${(props) => (props.$isHoveringLink ? "150px" : "200px")};
+  width: ${(props) => (props.$isHoveringLink ? "150px" : "200px")};
   mix-blend-mode: soft-light;
   pointer-events: none;
   background-image: radial-gradient(
     circle,
-    rgba(246, 244, 237, 0.4) 20%,
+    rgba(246, 244, 237, 0.4) 40%,
     transparent 65%
   );
   border-radius: 50%;

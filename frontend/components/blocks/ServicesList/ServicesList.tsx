@@ -25,7 +25,7 @@ const ServicesList = (props: Props) => {
   });
 
   return (
-    <ServicesListWrapper ref={ref}>
+    <ServicesListWrapper ref={ref} className="service-list">
       {hasData &&
         data.map((item, i) => (
           <ServiceCard

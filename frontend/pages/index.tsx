@@ -20,6 +20,11 @@ const PageWrapper = styled(motion.div)`
   z-index: 2;
   margin-bottom: 100vh;
   background: var(--colour-off-white);
+
+  .service-list {
+    position: sticky;
+    top: var(--header-h);
+  }
 `;
 
 const AboutTitle = styled.section`
