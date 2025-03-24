@@ -70,14 +70,14 @@ const Layout = (props: Props) => {
 
     const body = document.body;
 
-    if (talentModalIsOpen || menuIsOpen) {
+    if (talentModalIsOpen || menuIsOpen || contactModalIsOpen) {
       lenis.stop();
       body.classList.add("modal-open");
     } else {
       lenis.start();
       body.classList.remove("modal-open");
     }
-  }, [talentModalIsOpen, menuIsOpen, lenis]);
+  }, [contactModalIsOpen, talentModalIsOpen, menuIsOpen, lenis]);
 
   useEffect(() => {
     setTalentModalIsOpen(false);
