@@ -55,7 +55,7 @@ const TalentCarousel = (props: Props) => {
 
   return (
     <TalentCarouselWrapper>
-      <Marquee direction="right">
+      <Marquee direction="right" speed={75}>
         {hasData &&
           data.map((item, i) => (
             <TalentCarouselCard
