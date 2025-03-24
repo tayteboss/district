@@ -31,10 +31,6 @@ const Inner = styled.div`
 const ContentWrapper = styled.div`
   grid-column: 4 / -1;
   padding: ${pxToRem(64)};
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: ${pxToRem(80)};
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletMedium} {
     padding: ${pxToRem(32)};
@@ -43,11 +39,24 @@ const ContentWrapper = styled.div`
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     grid-column: 1 / -1;
     padding: ${pxToRem(48)} 0;
-    gap: ${pxToRem(32)};
   }
 `;
 
-const Content = styled.div``;
+const Title = styled.h1`
+  margin-bottom: ${pxToRem(64)};
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+    margin-bottom: ${pxToRem(32)};
+  }
+`;
+
+const Content = styled.div`
+  margin-bottom: ${pxToRem(80)};
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+    margin-bottom: ${pxToRem(32)};
+  }
+`;
 
 const CloseTrigger = styled.button`
   background: transparent;
@@ -110,6 +119,7 @@ const TalentModal = (props: Props) => {
                   socialLinks={data?.socialLinks}
                 />
                 <ContentWrapper>
+                  {data?.title && <Title>{data?.title}</Title>}
                   <Content
                     dangerouslySetInnerHTML={{
                       __html: formatHTML(data?.description),
