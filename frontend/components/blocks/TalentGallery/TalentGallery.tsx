@@ -50,6 +50,7 @@ const CarouselImage = styled(motion.button)<{ $isActive: boolean }>`
     props.$isActive
       ? "2px solid var(--colour-matcha)"
       : "2px solid transparent"};
+  box-sizing: unset;
 
   transition: all var(--transition-speed-default) var(--transition-ease);
 
@@ -93,12 +94,6 @@ const TalentGallery = (props: Props) => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
 
-  useEffect(() => {
-    if (emblaApi) {
-      console.log(emblaApi.slideNodes());
-    }
-  }, [emblaApi]);
-
   const sortGallery = (
     heroThumbnailUrl: string | undefined,
     heroGallery: TalentType["heroGallery"]
@@ -116,8 +111,6 @@ const TalentGallery = (props: Props) => {
   useEffect(() => {
     setGallery(sortGallery(heroThumbnail?.asset?.url, heroGallery));
   }, [heroThumbnail, heroGallery]);
-
-  console.log("gallery", gallery);
 
   const hasSocials = socialLinks && socialLinks.length > 0;
 
@@ -147,7 +140,10 @@ const TalentGallery = (props: Props) => {
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
             {gallery.map((image, i) => (
-              <div className="embla__slide" key={i}>
+              <div
+                className={`embla__slide ${i <= 4 ? "flush" : "overlay"}`}
+                key={i}
+              >
                 <CarouselImage
                   $isActive={activeIndex === i}
                   onClick={() => setActiveIndex(i)}

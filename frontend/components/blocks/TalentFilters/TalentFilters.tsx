@@ -27,6 +27,7 @@ const Inner = styled.div`
   display: flex;
   align-items: center;
   gap: ${pxToRem(32)};
+  width: 100%;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     flex-direction: column;
@@ -43,11 +44,37 @@ const Title = styled.p`
 
 const FilterList = styled.div`
   display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: ${pxToRem(32)};
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+`;
+
+const InnerFilterList = styled.div`
+  display: flex;
   gap: ${pxToRem(16)};
   flex-wrap: wrap;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     gap: ${pxToRem(8)};
+  }
+`;
+
+const ClearTrigger = styled.button`
+  white-space: nowrap;
+
+  transition: all var(--transition-speed-default) var(--transition-ease);
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+    text-align: left;
   }
 `;
 
@@ -65,14 +92,22 @@ const TalentFilters = (props: Props) => {
         <Inner>
           <Title className="type-button">Filter by</Title>
           <FilterList>
-            {tags.map((tag, i) => (
-              <FilterButton
-                tag={tag}
-                key={i}
-                activeTags={activeTags}
-                setActiveTags={setActiveTags}
-              />
-            ))}
+            <InnerFilterList>
+              {tags.map((tag, i) => (
+                <FilterButton
+                  tag={tag}
+                  key={i}
+                  activeTags={activeTags}
+                  setActiveTags={setActiveTags}
+                />
+              ))}
+            </InnerFilterList>
+            <ClearTrigger
+              className="type-caption"
+              onClick={() => setActiveTags([])}
+            >
+              Clear filter
+            </ClearTrigger>
           </FilterList>
         </Inner>
       </LayoutWrapper>

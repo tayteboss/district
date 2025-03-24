@@ -368,9 +368,16 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	.embla__slide {
-		flex: 0 0 26%;
 		min-width: 0;
 		margin-right: 4px;
+
+		&.flush {
+			flex: 0 0 calc(25% - 3px);
+		}
+
+		&.overlay {
+			flex: 0 0 26%;
+		}
 	}
 
 	.performance {
