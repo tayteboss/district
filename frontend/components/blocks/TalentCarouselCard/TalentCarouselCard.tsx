@@ -7,11 +7,7 @@ import { useContext } from "react";
 import { TalentModalContext } from "../../layout/Layout";
 
 const TalentCarouselCardWrapper = styled.div`
-  margin-right: ${pxToRem(16)};
-
-  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-    margin-right: ${pxToRem(12)};
-  }
+  position: relative;
 `;
 
 const ContentBar = styled.div`
@@ -34,17 +30,9 @@ const Tag = styled.a`
 
 const ImageWrapper = styled.div`
   position: relative;
-  width: 20vw;
+  width: 100%;
   overflow: hidden;
   cursor: pointer;
-
-  @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-    width: 35vw;
-  }
-
-  @media ${(props) => props.theme.mediaBreakpoints.mobile} {
-    width: 45vw;
-  }
 
   &:hover {
     img {

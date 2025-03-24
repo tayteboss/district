@@ -3,6 +3,10 @@ import { HomePageType } from "../../../shared/types/types";
 import Marquee from "react-fast-marquee";
 import TalentCarouselCard from "../TalentCarouselCard";
 import pxToRem from "../../../utils/pxToRem";
+import AutoScroll from "embla-carousel-auto-scroll";
+import useEmblaCarousel from "embla-carousel-react";
+import { EmblaOptionsType } from "embla-carousel";
+import { useState, useEffect } from "react";
 
 const TalentCarouselWrapper = styled.section`
   margin-bottom: ${pxToRem(64)};
@@ -14,30 +18,43 @@ const TalentCarouselWrapper = styled.section`
     margin-bottom: 0;
   }
 
-  .rfm-initial-child-container {
-    align-items: end !important;
+  .embla__container {
+    align-items: flex-end;
   }
 
-  .rfm-marquee {
-    align-items: end !important;
+  .embla__slide {
+    flex: 0 0 20vw;
+    margin-right: ${pxToRem(16)};
+
+    @media ${(props) => props.theme.mediaBreakpoints.tabletLandscape} {
+      flex: 0 0 25vw;
+    }
+
+    @media ${(props) => props.theme.mediaBreakpoints.tabletMedium} {
+      flex: 0 0 35vw;
+    }
+
+    @media ${(props) => props.theme.mediaBreakpoints.mobile} {
+      flex: 0 0 50vw;
+    }
   }
 
-  .rfm-child:nth-child(4n + 1) {
+  .embla__slide:nth-child(4n + 1) {
     .talent-carousel-card__image-wrapper {
       padding-top: 105%;
     }
   }
-  .rfm-child:nth-child(4n + 2) {
+  .embla__slide:nth-child(4n + 2) {
     .talent-carousel-card__image-wrapper {
       padding-top: 140%;
     }
   }
-  .rfm-child:nth-child(4n + 3) {
+  .embla__slide:nth-child(4n + 3) {
     .talent-carousel-card__image-wrapper {
       padding-top: 60%;
     }
   }
-  .rfm-child:nth-child(4n + 4) {
+  .embla__slide:nth-child(4n + 4) {
     .talent-carousel-card__image-wrapper {
       padding-top: 140%;
     }
@@ -51,23 +68,38 @@ type Props = {
 const TalentCarousel = (props: Props) => {
   const { data } = props;
 
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, skipSnaps: true, dragFreeze: true } as EmblaOptionsType,
+    [
+      AutoScroll({
+        playOnInit: true,
+        stopOnInteraction: false,
+        direction: "backward",
+      }),
+    ]
+  );
+
   const hasData = data && data.length > 0;
 
   return (
     <TalentCarouselWrapper>
-      <Marquee direction="right" speed={75}>
-        {hasData &&
-          data.map((item, i) => (
-            <TalentCarouselCard
-              title={item?.title}
-              featuredTag={item?.featuredTag}
-              featuredSocialLink={item?.featuredSocialLink}
-              slug={item?.slug}
-              heroThumbnail={item?.heroThumbnail}
-              key={i}
-            />
-          ))}
-      </Marquee>
+      <div className="embla" ref={emblaRef}>
+        <div className="embla__container">
+          {hasData &&
+            data.map((item, i) => (
+              <div className={`embla__slide`} key={i}>
+                <TalentCarouselCard
+                  title={item?.title}
+                  featuredTag={item?.featuredTag}
+                  featuredSocialLink={item?.featuredSocialLink}
+                  slug={item?.slug}
+                  heroThumbnail={item?.heroThumbnail}
+                  key={i}
+                />
+              </div>
+            ))}
+        </div>
+      </div>
     </TalentCarouselWrapper>
   );
 };
