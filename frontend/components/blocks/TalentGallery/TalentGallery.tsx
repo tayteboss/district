@@ -42,15 +42,10 @@ const HeroImageInner = styled.div`
   width: 100%;
 `;
 
-const CarouselImage = styled(motion.button)<{ $isActive: boolean }>`
+const CarouselImage = styled(motion.button)`
   width: 100%;
   padding-top: 140%;
   position: relative;
-  border: ${(props) =>
-    props.$isActive
-      ? "2px solid var(--colour-matcha)"
-      : "2px solid transparent"};
-  box-sizing: unset;
 
   transition: all var(--transition-speed-default) var(--transition-ease);
 
@@ -59,11 +54,24 @@ const CarouselImage = styled(motion.button)<{ $isActive: boolean }>`
   }
 `;
 
-const CarouselImageInner = styled.div`
+const CarouselImageInner = styled.div<{ $isActive: boolean }>`
   position: absolute;
   inset: 0;
   height: 100%;
   width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    border: 2px solid
+      ${(props) => (props.$isActive ? "var(--colour-matcha)" : "transparent")};
+
+    transition: all var(--transition-speed-default) var(--transition-ease);
+  }
 `;
 
 const SocialLinks = styled.div`
@@ -144,11 +152,8 @@ const TalentGallery = (props: Props) => {
                 className={`embla__slide ${i <= 4 ? "flush" : "overlay"}`}
                 key={i}
               >
-                <CarouselImage
-                  $isActive={activeIndex === i}
-                  onClick={() => setActiveIndex(i)}
-                >
-                  <CarouselImageInner>
+                <CarouselImage onClick={() => setActiveIndex(i)}>
+                  <CarouselImageInner $isActive={activeIndex === i}>
                     <Image
                       src={image}
                       alt="Gallery image"
