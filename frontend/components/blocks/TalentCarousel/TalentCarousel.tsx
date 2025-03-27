@@ -7,6 +7,7 @@ import AutoScroll from "embla-carousel-auto-scroll";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const TalentCarouselWrapper = styled.section`
   margin-bottom: ${pxToRem(64)};
@@ -68,15 +69,18 @@ type Props = {
 const TalentCarousel = (props: Props) => {
   const { data } = props;
 
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, skipSnaps: true, dragFreeze: true } as EmblaOptionsType,
     [
-      AutoScroll({
-        playOnInit: true,
-        stopOnInteraction: false,
-        direction: "backward",
-      }),
-    ]
+      !isMobile
+        ? AutoScroll({
+            playOnInit: true,
+            stopOnInteraction: false,
+            direction: "backward",
+          })
+        : undefined,
+    ].filter(Boolean)
   );
 
   const hasData = data && data.length > 0;
