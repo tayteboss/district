@@ -10,7 +10,8 @@ const TalentModalWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  height: 100lvh;
+  height: 100vh;
+  height: 100dvh;
   width: 100%;
   z-index: 95;
   background: rgba(246, 244, 237, 0.85);
