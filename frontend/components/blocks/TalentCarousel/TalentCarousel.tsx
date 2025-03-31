@@ -42,7 +42,7 @@ const TalentCarouselWrapper = styled.section`
 
   .embla__slide:nth-child(4n + 1) {
     .talent-carousel-card__image-wrapper {
-      padding-top: 105%;
+      padding-top: 110%;
     }
   }
   .embla__slide:nth-child(4n + 2) {
@@ -52,12 +52,12 @@ const TalentCarouselWrapper = styled.section`
   }
   .embla__slide:nth-child(4n + 3) {
     .talent-carousel-card__image-wrapper {
-      padding-top: 60%;
+      padding-top: 120%;
     }
   }
   .embla__slide:nth-child(4n + 4) {
     .talent-carousel-card__image-wrapper {
-      padding-top: 140%;
+      padding-top: 130%;
     }
   }
 `;
