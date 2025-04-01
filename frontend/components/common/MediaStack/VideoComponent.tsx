@@ -67,8 +67,8 @@ type Props = {
 const VideoComponent = (props: Props) => {
   const { data, inView, isPriority } = props;
 
-  const playbackId = data?.video?.asset?.playbackId;
-  const posterUrl = `https://image.mux.com/${data?.video?.asset?.playbackId}/thumbnail.png?width=214&height=121&time=1`;
+  const playbackId = data?.media?.video?.asset?.playbackId;
+  const posterUrl = `https://image.mux.com/${data?.media?.video?.asset?.playbackId}/thumbnail.png?width=214&height=121&time=1`;
 
   return (
     <VideoComponentWrapper className="media-wrapper">
