@@ -13,6 +13,7 @@ import ServicesList from "../components/blocks/ServicesList";
 import TalentCarousel from "../components/blocks/TalentCarousel";
 import LayoutWrapper from "../components/layout/LayoutWrapper";
 import pxToRem from "../utils/pxToRem";
+import { useEffect } from "react";
 
 const PageWrapper = styled(motion.div)`
   padding-top: var(--header-h);
@@ -41,6 +42,10 @@ type Props = {
 
 const Page = (props: Props) => {
   const { data, pageTransitionVariants } = props;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

@@ -169,23 +169,29 @@ const MultiTypeTitle = (props: Props) => {
                   $useMaxWidth={useMaxWidth}
                 >
                   {data.map((item, i) => {
-                    const isSerifType = item.fontStyle === "serif";
+                    const isSerifType = item?.fontStyle === "serif";
 
                     return isSerifType ? (
                       <Serif key={`serif-${i}`} variants={childVariants}>
-                        {item.text.split(" ").map((word, j) => (
-                          <React.Fragment key={`word-${j}`}>
-                            {word}{" "}
-                          </React.Fragment>
-                        ))}
+                        {item?.text &&
+                          item.text
+                            .split(" ")
+                            .map((word, j) => (
+                              <React.Fragment key={`word-${j}`}>
+                                {word}{" "}
+                              </React.Fragment>
+                            ))}
                       </Serif>
                     ) : (
                       <AllCaps key={`allCaps-${i}`} variants={childVariants}>
-                        {item.text.split(" ").map((word, j) => (
-                          <React.Fragment key={`word-${j}`}>
-                            {word}{" "}
-                          </React.Fragment>
-                        ))}
+                        {item?.text &&
+                          item.text
+                            .split(" ")
+                            .map((word, j) => (
+                              <React.Fragment key={`word-${j}`}>
+                                {word}{" "}
+                              </React.Fragment>
+                            ))}
                       </AllCaps>
                     );
                   })}

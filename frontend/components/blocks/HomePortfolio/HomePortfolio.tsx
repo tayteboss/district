@@ -33,7 +33,7 @@ const HomePortfolio = (props: Props) => {
               <MultiTypeTitle
                 data={portfolioTitle}
                 linkUrl="/portfolio"
-                linkTitle="Portfolio"
+                linkTitle="Roster"
               />
             </Inner>
           </LayoutWrapper>

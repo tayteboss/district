@@ -67,14 +67,13 @@ type Props = {
 const HomeGallery = (props: Props) => {
   const { data } = props;
 
-  const shuffled = data.sort(() => 0.5 - Math.random());
-  const selectedImages = shuffled.slice(0, 3);
+  const firstThreeImages = data.slice(0, 3);
 
   return (
     <HomeGalleryWrapper>
       <LayoutWrapper>
         <LayoutGrid>
-          {selectedImages.map((item, i) => {
+          {firstThreeImages.map((item, i) => {
             const ratio = item?.aspectRatio === "landscape" ? "56.25%" : "170%";
 
             return (
