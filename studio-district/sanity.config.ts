@@ -34,7 +34,7 @@ export default defineConfig({
               .icon(DocumentIcon)
               .child(S.editor().schemaType('aboutPage').documentId('aboutPage')),
             S.listItem()
-              .title('Portfolio Page')
+              .title('Roster Page')
               .icon(DocumentIcon)
               .child(S.editor().schemaType('portfolioPage').documentId('portfolioPage')),
             S.listItem()

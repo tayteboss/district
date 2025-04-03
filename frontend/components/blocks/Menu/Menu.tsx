@@ -78,11 +78,11 @@ const Menu = (props: Props) => {
                 About
               </Link>
               <Link
-                href="/portfolio"
+                href="/roster"
                 className="type-button"
                 onClick={() => setMenuIsOpen(false)}
               >
-                Portfolio
+                Roster
               </Link>
               <ContactWrapper onClick={() => setMenuIsOpen(false)}>
                 <ButtonLayout>

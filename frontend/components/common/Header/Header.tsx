@@ -112,8 +112,8 @@ const Header = (props: Props) => {
             <Link href="/about" className="type-button hover-link">
               About
             </Link>
-            <Link href="/portfolio" className="type-button hover-link">
-              Portfolio
+            <Link href="/roster" className="type-button hover-link">
+              Roster
             </Link>
           </NavList>
           <LogoWrapper>

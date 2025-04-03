@@ -34,7 +34,7 @@ export default {
       fields: mediaBlock,
     },
     {
-      title: 'Portfolio title',
+      title: 'Roster title',
       name: 'portfolioTitle',
       type: 'array',
       of: [multiTypeBlock],

@@ -32,7 +32,7 @@ const HomePortfolio = (props: Props) => {
             <Inner>
               <MultiTypeTitle
                 data={portfolioTitle}
-                linkUrl="/portfolio"
+                linkUrl="/roster"
                 linkTitle="Roster"
               />
             </Inner>

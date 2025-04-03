@@ -1,7 +1,7 @@
 import {multiTypeBlock} from '../objects'
 
 export default {
-  title: 'Portfolio Page',
+  title: 'Roster Page',
   name: 'portfolioPage',
   type: 'document',
   fields: [
