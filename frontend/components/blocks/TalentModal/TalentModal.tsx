@@ -101,6 +101,8 @@ type Props = {
 const TalentModal = (props: Props) => {
   const { isActive, data, setTalentModalIsOpen } = props;
 
+  console.log("data", data);
+
   return (
     <AnimatePresence>
       {isActive && (

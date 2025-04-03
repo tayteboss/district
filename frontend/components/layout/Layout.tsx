@@ -50,11 +50,7 @@ const Layout = (props: Props) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!activeTalentSlug || !talentModalIsOpen) {
-      setActiveTalentData(false);
-      setActiveTalentSlug(false);
-      return;
-    }
+    if (!activeTalentSlug) return;
 
     const talent = talentData.find(
       (talent: TalentType) => talent.slug.current === activeTalentSlug

@@ -106,7 +106,12 @@ const TalentGallery = (props: Props) => {
     heroThumbnailUrl: string | undefined,
     heroGallery: TalentType["heroGallery"]
   ) => {
-    if (!heroGallery) return [];
+    if (!heroGallery || heroGallery.length === 0) {
+      if (heroThumbnailUrl) {
+        return [heroThumbnailUrl];
+      }
+      return [];
+    }
     const galleryUrls = heroGallery.map(
       (galleryItem) => galleryItem?.image.asset.url
     );
@@ -145,29 +150,31 @@ const TalentGallery = (props: Props) => {
             </HeroImageInner>
           </HeroImage>
         </AnimatePresence>
-        <div className="embla" ref={emblaRef}>
-          <div className="embla__container">
-            {gallery.map((image, i) => (
-              <div
-                className={`embla__slide ${i <= 4 ? "flush" : "overlay"}`}
-                key={i}
-              >
-                <CarouselImage onClick={() => setActiveIndex(i)}>
-                  <CarouselImageInner $isActive={activeIndex === i}>
-                    <Image
-                      src={image}
-                      alt="Gallery image"
-                      fill
-                      style={{
-                        objectFit: "cover",
-                      }}
-                    />
-                  </CarouselImageInner>
-                </CarouselImage>
-              </div>
-            ))}
+        {gallery.length > 1 && (
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container">
+              {gallery.map((image, i) => (
+                <div
+                  className={`embla__slide ${i <= 4 ? "flush" : "overlay"}`}
+                  key={i}
+                >
+                  <CarouselImage onClick={() => setActiveIndex(i)}>
+                    <CarouselImageInner $isActive={activeIndex === i}>
+                      <Image
+                        src={image}
+                        alt="Gallery image"
+                        fill
+                        style={{
+                          objectFit: "cover",
+                        }}
+                      />
+                    </CarouselImageInner>
+                  </CarouselImage>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </Gallery>
       <SocialLinks>
         {hasSocials &&
