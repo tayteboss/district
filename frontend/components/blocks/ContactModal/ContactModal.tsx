@@ -153,6 +153,8 @@ const ContactModal = (props: Props) => {
     { link: linkedinUrl, title: "LinkedIn" },
   ];
 
+  console.log("socialLinks", socialLinks);
+
   return (
     <AnimatePresence>
       {isActive && (

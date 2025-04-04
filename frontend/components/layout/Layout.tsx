@@ -49,6 +49,8 @@ const Layout = (props: Props) => {
   const lenis = useLenis(({ scroll }) => {});
   const router = useRouter();
 
+  console.log("siteOptions", siteOptions);
+
   useEffect(() => {
     if (!activeTalentSlug) return;
 
