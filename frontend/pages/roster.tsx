@@ -40,9 +40,7 @@ const Page = (props: Props) => {
   useEffect(() => {
     if (activeTags.length > 0) {
       const filtered = talent.filter((talent) => {
-        return activeTags.every((tag) =>
-          talent.tags.some((talentTag) => talentTag === tag)
-        );
+        return activeTags.some((tag) => talent.tags.includes(tag));
       });
       setFilteredTalent(filtered);
     } else {
