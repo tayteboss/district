@@ -116,7 +116,7 @@ type Props = {
   isActive: boolean;
   instagramUrl: SiteSettingsType["instagramUrl"];
   tiktokUrl: SiteSettingsType["tiktokUrl"];
-  facebookUrl: SiteSettingsType["facebookUrl"];
+  linkedinUrl: SiteSettingsType["linkedinUrl"];
   email: SiteSettingsType["email"];
   phone: SiteSettingsType["phone"];
   officeAddress: SiteSettingsType["officeAddress"];
@@ -133,7 +133,7 @@ const ContactModal = (props: Props) => {
     isActive,
     instagramUrl,
     tiktokUrl,
-    facebookUrl,
+    linkedinUrl,
     email,
     phone,
     officeAddress,
@@ -145,12 +145,12 @@ const ContactModal = (props: Props) => {
     setContactModalIsOpen,
   } = props;
 
-  const hasSocials = instagramUrl || tiktokUrl || facebookUrl;
+  const hasSocials = instagramUrl || tiktokUrl || linkedinUrl;
 
   const socialLinks = [
     { link: instagramUrl, title: "Instagram" },
     { link: tiktokUrl, title: "Tiktok" },
-    { link: facebookUrl, title: "Facebook" },
+    { link: linkedinUrl, title: "LinkedIn" },
   ];
 
   return (
@@ -168,7 +168,7 @@ const ContactModal = (props: Props) => {
               <LayoutGrid>
                 <LHS>
                   <ContactFormButton
-                    title="For Brands"
+                    title="Partner with a Creator"
                     linkUrl={forBrandsButtonLink}
                     linkTitle={forBrandsButtonTitle}
                   />
@@ -215,7 +215,7 @@ const ContactModal = (props: Props) => {
             className="type-button"
             onClick={() => setContactModalIsOpen(false)}
           >
-            Close Overlay
+            Close
           </CloseTrigger>
         </ContactModalWrapper>
       )}

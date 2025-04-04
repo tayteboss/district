@@ -7,9 +7,11 @@ import { siteSettingsQueryString } from "../lib/sanityQueries";
 import LayoutWrapper from "../components/layout/LayoutWrapper";
 import LayoutGrid from "../components/layout/LayoutGrid";
 import { PortableText } from "@portabletext/react";
+import pxToRem from "../utils/pxToRem";
 
 const PageWrapper = styled(motion.div)`
   padding-top: calc(64px + var(--header-h));
+  padding-bottom: ${pxToRem(240)};
   position: relative;
   z-index: 2;
   margin-bottom: 100vh;

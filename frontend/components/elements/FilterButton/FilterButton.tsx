@@ -80,7 +80,7 @@ const FilterButton = (props: Props) => {
       className="type-button"
     >
       <Circle />
-      {tag}
+      {tag === "sport" ? "Health & Fitness" : tag}
     </FilterButtonWrapper>
   );
 };

@@ -236,14 +236,8 @@ export const GlobalStyles = createGlobalStyle`
 			}
 		}
 
-		h2 {
-			font-size: ${pxToRem(57)};
-			line-height: 1.1;
-			font-weight: 400;
-		}
-
 		h4, h5, h6 {
-			font-size: ${pxToRem(14)} !important;
+			font-size: ${pxToRem(18)} !important;
 			line-height: 1.2 !important;
 			font-family: var(--font-suisse) !important;
 			text-transform: uppercase !important;
@@ -254,7 +248,7 @@ export const GlobalStyles = createGlobalStyle`
 			}
 		}
 
-		p, a {
+		p, a, li {
 			font-size: ${pxToRem(16)};
 			line-height: 1.2;
 			font-family: var(--font-times);

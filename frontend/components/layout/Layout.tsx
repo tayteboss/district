@@ -103,7 +103,7 @@ const Layout = (props: Props) => {
         isActive={contactModalIsOpen}
         instagramUrl={siteOptions?.instagramUrl}
         tiktokUrl={siteOptions?.tiktokUrl}
-        facebookUrl={siteOptions?.facebookUrl}
+        linkedinUrl={siteOptions?.linkedinUrl}
         phone={siteOptions?.phone}
         email={siteOptions?.email}
         officeAddress={siteOptions?.officeAddress}
@@ -125,7 +125,7 @@ const Layout = (props: Props) => {
         email={siteOptions?.email}
         instagram={siteOptions?.instagramUrl}
         tiktok={siteOptions?.tiktokUrl}
-        facebook={siteOptions?.facebookUrl}
+        linkedin={siteOptions?.linkedinUrl}
       />
     </>
   );

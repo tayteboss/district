@@ -36,7 +36,7 @@ export default {
               {title: 'Parenting', value: 'parenting'},
               {title: 'Tech', value: 'tech'},
               {title: 'Travel', value: 'travel'},
-              {title: 'Sport', value: 'sport'},
+              {title: 'Health & Fitness', value: 'sport'},
             ],
           },
         },

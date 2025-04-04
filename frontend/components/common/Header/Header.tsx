@@ -127,7 +127,7 @@ const Header = (props: Props) => {
                 className="type-button"
                 onClick={() => setContactModalIsOpen(!contactModalIsOpen)}
               >
-                {contactModalIsOpen ? "Close Overlay" : "Contact Us"}
+                {contactModalIsOpen ? "Close" : "Contact Us"}
               </button>
             </ButtonLayout>
           </ContactWrapper>

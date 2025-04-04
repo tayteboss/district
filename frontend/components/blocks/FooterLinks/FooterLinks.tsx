@@ -28,11 +28,11 @@ type Props = {
   email?: string;
   instagram?: string;
   tiktok?: string;
-  facebook?: string;
+  linkedin?: string;
 };
 
 const FooterLinks = (props: Props) => {
-  const { email, instagram, tiktok, facebook } = props;
+  const { email, instagram, tiktok, linkedin } = props;
 
   return (
     <FooterLinksWrapper>
@@ -55,13 +55,13 @@ const FooterLinks = (props: Props) => {
             TikTok
           </Link>
         )}
-        {facebook && (
+        {linkedin && (
           <Link
-            href={facebook}
+            href={linkedin}
             target="_blank"
             className="type-button hover-link"
           >
-            Facebook
+            LinkedIn
           </Link>
         )}
       </SocialLinks>

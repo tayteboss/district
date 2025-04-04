@@ -103,6 +103,14 @@ const TalentCard = (props: Props) => {
         {title && <Title className="type-caption">{title}</Title>}
         <Tags>
           <Tag className="type-caption">{featuredTag}</Tag>
+          {/* <Tag>
+            {tags.map((item, i) => (
+              <span className="type-caption" key={i}>
+                {item}
+                {", "}
+              </span>
+            ))}
+          </Tag> */}
         </Tags>
       </ContentWrapper>
     </TalentCardWrapper>

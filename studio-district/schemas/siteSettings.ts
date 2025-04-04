@@ -20,8 +20,8 @@ export default {
       type: 'url',
     },
     {
-      title: 'Facebook URL',
-      name: 'facebookUrl',
+      title: 'LinkedIn URL',
+      name: 'linkedinUrl',
       type: 'url',
     },
     {

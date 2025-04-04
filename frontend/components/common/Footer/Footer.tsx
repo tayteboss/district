@@ -38,11 +38,11 @@ type Props = {
   email?: SiteSettingsType["email"];
   instagram: SiteSettingsType["instagramUrl"];
   tiktok: string;
-  facebook: string;
+  linkedin: string;
 };
 
 const Footer = (props: Props) => {
-  const { email, instagram, tiktok, facebook } = props;
+  const { email, instagram, tiktok, linkedin } = props;
 
   return (
     <FooterWrapper>
@@ -54,7 +54,7 @@ const Footer = (props: Props) => {
               email={email}
               instagram={instagram}
               tiktok={tiktok}
-              facebook={facebook}
+              linkedin={linkedin}
             />
             <LogoWrapper>
               <LogoSvg />

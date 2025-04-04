@@ -30,7 +30,7 @@ export type SiteSettingsType = {
   referenceTitle: string;
   instagramUrl: string;
   tiktokUrl: string;
-  facebookUrl: string;
+  linkedinUrl: string;
   phone: string;
   email: string;
   officeAddress: string;
