@@ -168,7 +168,7 @@ const ContactModal = (props: Props) => {
               <LayoutGrid>
                 <LHS>
                   <ContactFormButton
-                    title="Partner with a Creator"
+                    title="For Brands"
                     linkUrl={forBrandsButtonLink}
                     linkTitle={forBrandsButtonTitle}
                   />
