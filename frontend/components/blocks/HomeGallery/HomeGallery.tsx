@@ -13,6 +13,7 @@ const HomeGalleryWrapper = styled.section`
   position: relative;
   z-index: 2;
   background: transparent;
+  pointer-events: none;
 
   @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
     padding: ${pxToRem(120)} 0;
