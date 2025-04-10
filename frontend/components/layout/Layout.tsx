@@ -126,6 +126,7 @@ const Layout = (props: Props) => {
         instagram={siteOptions?.instagramUrl}
         tiktok={siteOptions?.tiktokUrl}
         linkedin={siteOptions?.linkedinUrl}
+        setContactModalIsOpen={setContactModalIsOpen}
       />
     </>
   );

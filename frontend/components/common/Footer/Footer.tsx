@@ -39,16 +39,17 @@ type Props = {
   instagram: SiteSettingsType["instagramUrl"];
   tiktok: string;
   linkedin: string;
+  setContactModalIsOpen: (value: boolean) => void;
 };
 
 const Footer = (props: Props) => {
-  const { email, instagram, tiktok, linkedin } = props;
+  const { email, instagram, tiktok, linkedin, setContactModalIsOpen } = props;
 
   return (
     <FooterWrapper>
       <LayoutWrapper>
         <Inner>
-          <FooterContactButton />
+          <FooterContactButton setContactModalIsOpen={setContactModalIsOpen} />
           <BottomWrapper>
             <FooterLinks
               email={email}
