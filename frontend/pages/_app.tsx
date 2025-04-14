@@ -11,6 +11,9 @@ import use1vh from "../hooks/use1vh";
 import { TransitionsType } from "../shared/types/types";
 import useHeaderHeight from "../hooks/useHeaderHeight";
 import Cursor from "../components/elements/Cursor";
+import { GoogleAnalytics } from "nextjs-google-analytics";
+
+const GATA_ID = process.env.NEXT_PUBLIC_NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const pageTransitionVariants: TransitionsType = {
   hidden: {
@@ -83,6 +86,7 @@ const App = (props: Props) => {
   return (
     <>
       <GlobalStyles />
+      <GoogleAnalytics trackPageViews />
       <ThemeProvider theme={theme}>
         <Layout>
           <AnimatePresence

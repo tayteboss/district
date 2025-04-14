@@ -97,6 +97,14 @@ export const GlobalStyles = createGlobalStyle`
 		cursor: pointer;
 	}
 
+	.CookieConsent {
+		* {
+			font-family: var(--font-suisse);
+			font-weight: 400;
+			font-size: 16px;
+		}
+	}
+
 	h1,
 	.type-h1 {
 		font-size: ${pxToRem(64)};
